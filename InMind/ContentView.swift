@@ -1,21 +1,20 @@
-//
-//  ContentView.swift
-//  InMind
-//
-//  Created by Furkan on 19.07.2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("isShown") private var isOnboardingShown = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack(alignment:.bottom){
+            Color("MainColor").ignoresSafeArea()
+            
+            if !isOnboardingShown {
+                OnboardingView(onBoardingIsShown: $isOnboardingShown)
+            } else {
+                Button("Change"){
+                    isOnboardingShown.toggle()
+                }
+            }
         }
-        .padding()
     }
 }
 
