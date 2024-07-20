@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC0662C12C4BC2A300BCD53A /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0662C02C4BC2A300BCD53A /* SplashScreen.swift */; };
 		DC7CF6322C49C28100EDE5BE /* InMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6312C49C28100EDE5BE /* InMindApp.swift */; };
 		DC7CF6342C49C28100EDE5BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6332C49C28100EDE5BE /* ContentView.swift */; };
 		DC7CF6362C49C28300EDE5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7CF6352C49C28300EDE5BE /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC0662C02C4BC2A300BCD53A /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		DC7CF62E2C49C28100EDE5BE /* InMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7CF6312C49C28100EDE5BE /* InMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMindApp.swift; sourceTree = "<group>"; };
 		DC7CF6332C49C28100EDE5BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC0662BF2C4BC28C00BCD53A /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DC0662C02C4BC2A300BCD53A /* SplashScreen.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
 		DC7CF6252C49C28100EDE5BE = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		DC8DCE672C4AD30400BC1136 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC0662BF2C4BC28C00BCD53A /* SplashScreen */,
 				DC8DCE6A2C4AD58500BC1136 /* Onboarding */,
 			);
 			path = Views;
@@ -170,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0662C12C4BC2A300BCD53A /* SplashScreen.swift in Sources */,
 				DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */,
 				DC7CF6342C49C28100EDE5BE /* ContentView.swift in Sources */,
 				DC7CF6322C49C28100EDE5BE /* InMindApp.swift in Sources */,

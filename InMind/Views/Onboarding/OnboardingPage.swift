@@ -10,6 +10,7 @@ struct OnboardingPage: View {
     
     var body:some View {
         VStack(spacing:10){
+            Spacer()
             AppLogo(appName: appName)
             Spacer()
             
