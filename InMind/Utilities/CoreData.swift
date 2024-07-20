@@ -13,8 +13,14 @@ class CoreData:ObservableObject {
     
     func setContainer(){
         container.loadPersistentStores{[weak self] description, error in
-            if let _ = error {
-                self?.isErrorOccurred = true
+            if let self = self {
+                if let _ = error {
+                    self.isErrorOccurred = true
+                    return
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                    self.fetchPasswords()
+                }
             }
         }
     }

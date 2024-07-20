@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SplashScreen: View {
     private let appName = "InMind"
-    var cdModel:CoreData
+    @StateObject var cdModel:CoreData
     
     var body: some View {
         VStack{
@@ -35,10 +35,6 @@ struct SplashScreen: View {
         }
         .onAppear{
             cdModel.setContainer()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-                cdModel.fetchPasswords()
-            }
-            
         }
     }
 }
