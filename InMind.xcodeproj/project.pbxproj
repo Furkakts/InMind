@@ -52,6 +52,14 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
+		DC0662C72C4BF07800BCD53A /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				DC7CF6332C49C28100EDE5BE /* ContentView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		DC7CF6252C49C28100EDE5BE = {
 			isa = PBXGroup;
 			children = (
@@ -74,7 +82,6 @@
 				DC8DCE6D2C4AD69A00BC1136 /* Utilities */,
 				DC8DCE672C4AD30400BC1136 /* Views */,
 				DC7CF6312C49C28100EDE5BE /* InMindApp.swift */,
-				DC7CF6332C49C28100EDE5BE /* ContentView.swift */,
 				DC7CF6352C49C28300EDE5BE /* Assets.xcassets */,
 				DC7CF6372C49C28300EDE5BE /* Preview Content */,
 				DC0662C22C4BE7D400BCD53A /* Passwords.xcdatamodeld */,
@@ -93,6 +100,7 @@
 		DC8DCE672C4AD30400BC1136 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC0662C72C4BF07800BCD53A /* HomeView */,
 				DC0662BF2C4BC28C00BCD53A /* SplashScreen */,
 				DC8DCE6A2C4AD58500BC1136 /* Onboarding */,
 			);

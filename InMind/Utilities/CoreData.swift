@@ -3,17 +3,15 @@ import CoreData
 
 class CoreData:ObservableObject {
     @Published private(set) var passwords:[PasswordEntity] = []
-    @Published private var isErrorOccurred = false
-    @Published private var isLoadingCompleted = false
-    private var container = NSPersistentContainer()
+    @Published private(set) var isErrorOccurred = false
+    @Published private(set) var isLoadingCompleted = false
+    private let container:NSPersistentContainer
     
     init(){
-        setContainer()
-        fetchPasswords()
+        container = NSPersistentContainer(name: "Passwords")
     }
     
-    private func setContainer(){
-        container = NSPersistentContainer(name: "Passwords")
+    func setContainer(){
         container.loadPersistentStores{[weak self] description, error in
             if let _ = error {
                 self?.isErrorOccurred = true
@@ -21,7 +19,7 @@ class CoreData:ObservableObject {
         }
     }
     
-    private func fetchPasswords(){
+    func fetchPasswords(){
         let request = NSFetchRequest<PasswordEntity>(entityName: "PasswordEntity")
         if let fetchedPasswords = try? container.viewContext.fetch(request) {
             passwords = fetchedPasswords

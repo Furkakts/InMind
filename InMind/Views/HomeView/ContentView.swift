@@ -2,14 +2,14 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("isShown") private var isOnboardingShown = false
-    private var isCoreDataLoaded = false
+    @StateObject private var coredataModel = CoreData()
     
     var body: some View {
         ZStack{
             Color("MainColor").ignoresSafeArea()
             
-            if !isCoreDataLoaded {
-                SplashScreen()
+            if !coredataModel.isLoadingCompleted {
+                SplashScreen(cdModel:coredataModel)
             } else {
                 if !isOnboardingShown {
                     OnboardingView(onBoardingIsShown: $isOnboardingShown)
