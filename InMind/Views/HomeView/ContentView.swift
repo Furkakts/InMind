@@ -9,17 +9,16 @@ struct ContentView: View {
             Color("MainColor").ignoresSafeArea()
             
             if !coredataModel.isLoadingCompleted {
-                SplashScreen(cdModel:coredataModel)
-            } else {
+                SplashScreen(cdModel:coredataModel)}
+            
+            else {
                 if !isOnboardingShown {
-                    OnboardingView(onBoardingIsShown: $isOnboardingShown)
-                } else {
+                    OnboardingView(onBoardingIsShown: $isOnboardingShown)}
+                else {
                     Button("Change") {
-                        isOnboardingShown.toggle()
-                    }
+                        isOnboardingShown.toggle()}
                 }
             }
-            
         }
     }
 }
