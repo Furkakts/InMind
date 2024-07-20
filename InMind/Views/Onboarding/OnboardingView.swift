@@ -15,6 +15,7 @@ struct OnboardingView: View {
         pageText[pageNumberInOnboardingView-1]
     }
     var body: some View {
+        
         switch pageNumberInOnboardingView {  // Visit over onboarding pages
            case 1:
               OnboardingPage(pageNumber: $pageNumberInOnboardingView, isShown: $onBoardingIsShown,
