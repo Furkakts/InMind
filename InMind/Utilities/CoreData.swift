@@ -11,6 +11,11 @@ class CoreData:ObservableObject {
         container = NSPersistentContainer(name: "Passwords")
     }
     
+    // MARK: - CoreData Functions
+    
+    ///  Prepares container for use of loading data.
+    ///
+    ///  If an error  comes out, it suspends application on SplashScreen, otherwise it directs you to fetch data from database.
     func setContainer(){
         container.loadPersistentStores{[weak self] description, error in
             if let self = self {
@@ -25,6 +30,9 @@ class CoreData:ObservableObject {
         }
     }
     
+    /// Gets data and updates passwords array with it.
+    ///
+    /// If an error  comes out, it suspends application on SplashScreen.
     func fetchPasswords(){
         let request = NSFetchRequest<PasswordEntity>(entityName: "PasswordEntity")
         if let fetchedPasswords = try? container.viewContext.fetch(request) {
