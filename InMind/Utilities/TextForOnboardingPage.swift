@@ -11,5 +11,5 @@ class TextForOnboardingPage {
     "Please feed us with your feedbacks.Don't hide them from us.They are not supposed to be as secret as your passwords."]
     
     static let titleOfPage:[String] =
-    ["Welcome to InMind!", "Store passwords securely" , "Access passwords without effort", "Feedbacks are as vital as passwords"]
+    ["Welcome to InMind!", "Store passwords securely." , "Access passwords without effort.", "Feedbacks are as vital as passwords."]
 }
