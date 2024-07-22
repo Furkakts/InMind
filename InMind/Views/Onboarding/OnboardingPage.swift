@@ -51,7 +51,7 @@ struct OnboardingPage: View {
     
     var pageEllipsis: some View {
         HStack{
-            ForEach(1..<numberOfPages+1){number in    // This part sets little circles for showing pages at the bottom of view.
+            ForEach(1..<numberOfPages+1, id:\.self){number in    // This part sets little circles for showing pages at the bottom of view.
                 Circle()
                     .fill(Color("MainColor"))
                     .frame(width:10, height:10)
