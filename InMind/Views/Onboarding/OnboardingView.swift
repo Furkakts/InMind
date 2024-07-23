@@ -5,6 +5,7 @@ struct OnboardingView: View {
     @Binding var onBoardingIsShown:Bool
     @State private var pageNumberInOnboardingView = 1
     
+      // Takes data from file and fills title and text arrays below
     private let pageTitle:[String] = TextForOnboardingPage.titleOfPage
     private var titleForEachOnboardingPage:String {
         pageTitle[pageNumberInOnboardingView-1]
@@ -14,9 +15,10 @@ struct OnboardingView: View {
     private var textForEachOnboardingPage:String {
         pageText[pageNumberInOnboardingView-1]
     }
+    
     var body: some View {
         
-        switch pageNumberInOnboardingView {  // Visit over onboarding pages
+        switch pageNumberInOnboardingView {  // Visit over onboarding view pages
            case 1:
               OnboardingPage(pageNumber: $pageNumberInOnboardingView, isShown: $onBoardingIsShown,
                             title: titleForEachOnboardingPage, text: textForEachOnboardingPage, numberOfPages: pageText.count)
@@ -29,7 +31,9 @@ struct OnboardingView: View {
            case 4:
               OnboardingPage(pageNumber: $pageNumberInOnboardingView, isShown: $onBoardingIsShown,
                             title: titleForEachOnboardingPage, text: textForEachOnboardingPage, numberOfPages: pageText.count)
-           default:
+        // FIXME: - Fix Break Statement
+        default:
+            // break
               Text("")
         }
     }
