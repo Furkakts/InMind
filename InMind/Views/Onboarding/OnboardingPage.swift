@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct OnboardingPage: View {
+    @AppStorage("isShown") private var isOnboardingShown = false
     @Binding var pageNumber:Int
-    @Binding var isShown:Bool
     private let appName = "InMind"
     var title:String
     var text:String
@@ -37,7 +37,7 @@ struct OnboardingPage: View {
                         Text("Next").padding(.horizontal,50)
                     }
                 } else {
-                    Button{ isShown = true } label:{
+                    Button{ isOnboardingShown = true } label:{
                         Text("Finish").padding(.horizontal,50)
                     }
                 }
