@@ -2,6 +2,8 @@ import SwiftUI
 
 struct MainScreen: View {
     @StateObject var coreDataModel: CoreData
+    @State private var isPasswordShown = true
+    @State private var isCommentShown = false
 
     var body: some View {
         TabView {
@@ -53,7 +55,78 @@ struct MainScreen: View {
     }
 
     var passwordList: some View {
-        Text("There is no password to show.")
+        NavigationStack {
+            List(coreDataModel.passwords){password in
+                NavigationLink(value: password) {
+                    VStack{
+                        HStack{
+                            Text("E-mail/Username")
+                                .font(.caption)
+                                .fontWeight(.light)
+                            Text(password.name ?? "")
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                            Image(systemName:"doc.on.doc")
+                                .imageScale(.medium)
+                                .foregroundStyle(Color("MainColor"))
+                                .onTapGesture {
+                                    copy(copiedText: password.name ?? "")
+                                }
+                        }
+                        
+                        HStack{
+                            Text("Password")
+                                .font(.caption)
+                                .fontWeight(.light)
+                            Text(isPasswordShown ? (password.password ?? "") : "***********")
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                            Image(systemName:"doc.on.doc")
+                                .imageScale(.medium)
+                                .foregroundStyle(Color("MainColor"))
+                                .onTapGesture {
+                                    copy(copiedText: password.password ?? "")
+                                }
+                            Image(systemName:isPasswordShown ? "eye.slash.fill" : "eye.fill")
+                                .imageScale(.medium)
+                                .foregroundStyle(Color("MainColor"))
+                                .onTapGesture {
+                                    withAnimation(.linear){
+                                        isPasswordShown.toggle()
+                                    }
+                                }
+                        }
+                        if isCommentShown {
+                            Text("Comment")
+                                .font(.caption)
+                                .fontWeight(.light)
+                            Text(password.comment ?? "")
+                                .font(.body)
+                                .fontWeight(.medium)
+                                .frame(height: 50)
+                                .minimumScaleFactor(0.5)
+                        }
+                        
+                        Image(systemName: "chevron.up")
+                            .imageScale(.medium)
+                            .foregroundStyle(Color("MainColor"))
+                            .rotationEffect(Angle(degrees:isCommentShown ? 180 : 0))
+                            .onTapGesture {
+                                withAnimation(.easeOut){
+                                    isCommentShown.toggle()
+                                }
+                            }
+                    }
+                }
+            }
+            .navigationDestination(for: PasswordEntity.self){ _ in
+                EmptyView()
+            }
+        }
+    }
+    
+    func copy(copiedText:String) {
+        UIPasteboard.general.string = copiedText
     }
 }
 
