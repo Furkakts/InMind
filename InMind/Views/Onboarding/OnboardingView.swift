@@ -31,10 +31,8 @@ struct OnboardingView: View {
            case 4:
               OnboardingPage(pageNumber: $pageNumberInOnboardingView, isShown: $onBoardingIsShown,
                             title: titleForEachOnboardingPage, text: textForEachOnboardingPage, numberOfPages: pageText.count)
-        // FIXME: - Fix Break Statement
-        default:
-            // break
-              Text("")
+           default:
+              EmptyView()
         }
     }
 }
