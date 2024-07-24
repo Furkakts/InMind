@@ -13,7 +13,7 @@ struct ContentView: View {
             
             else {
                 if !isOnboardingShown {
-                    OnboardingView(onBoardingIsShown: $isOnboardingShown)}
+                    OnboardingView()}
                 else {
                     MainScreen(coreDataModel: coredataModel)
                 }
