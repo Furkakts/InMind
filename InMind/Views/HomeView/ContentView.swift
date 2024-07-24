@@ -15,8 +15,7 @@ struct ContentView: View {
                 if !isOnboardingShown {
                     OnboardingView(onBoardingIsShown: $isOnboardingShown)}
                 else {
-                    Button("Change") {
-                        isOnboardingShown.toggle()}
+                    MainScreen(coreDataModel: coredataModel)
                 }
             }
         }
