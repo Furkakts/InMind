@@ -76,7 +76,7 @@ struct AddPasswordView: View {
                 isLoadingActivated = false
                 isSameEntryGiven = true
             } else {
-//                coreDataModel.addPassword(username:username, password:password, comment:comment)
+                coreDataModel.addPassword(username:username, password:password, comment:comment)
                 isLoadingActivated = false
                 reset()
             }

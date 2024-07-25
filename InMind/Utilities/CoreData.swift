@@ -42,4 +42,14 @@ class CoreData:ObservableObject {
             isErrorOccurred = true
         }
     }
+    
+    func addPassword(username:String, password:String, comment:String) {
+        let passwordEnt = PasswordEntity(context: container.viewContext)
+            passwordEnt.name = username
+            passwordEnt.password = password
+            passwordEnt.comment = comment
+       
+        try? container.viewContext.save()
+        fetchPasswords()
+    }
 }
