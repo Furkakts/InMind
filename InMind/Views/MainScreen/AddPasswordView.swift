@@ -22,19 +22,31 @@ struct AddPasswordView: View {
                     .bold()
                     .foregroundStyle(Color("MainColor"))
 
-                HStack{
-                    formText(text: "Username:")
+                VStack{
+                    formText(text: "E-mail / Username")
                     TextField("E-mail or Username", text:$username)
                         .textFieldStyle(.roundedBorder)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
                 }
-                HStack{
-                    formText(text: "Password:")
+                Divider()
+                    .frame(width:200)
+                    .background(Color("MainColor"))
+                VStack{
+                    formText(text: "Password")
                     TextField("Password", text:$password)
                         .textFieldStyle(.roundedBorder)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
                 }
-                HStack(alignment:.top){
-                    formText(text:"Comment:")
+                Divider()
+                    .frame(width:200)
+                    .background(Color("MainColor"))
+                VStack(alignment:.center){
+                    formText(text:"Comment")
                     TextEditor(text: $comment)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
                         .frame(height:100)
                 }
                 
@@ -42,13 +54,13 @@ struct AddPasswordView: View {
                     resetButton
                     saveButton
                 }
-                .padding(.top, 50)
+                .padding(.top, 30)
             }
             .padding()
             .background{
                 RoundedRectangle(cornerRadius: 5)
                    .fill(Color("SecondaryColor"))
-                   .frame(width:UIScreen.main.bounds.width-20, height: 550)
+                   .frame(width:UIScreen.main.bounds.width-20, height: 650)
                 
             }
             .alert(alertMessage, isPresented: $isSameEntryGiven) {

@@ -36,12 +36,12 @@ struct MainScreen: View {
     }
 
     var contentUnavailable: some View {
-        VStack(spacing:30){
-            Image(systemName:"note.text.badge.plus")
+        VStack(spacing: 30) {
+            Image(systemName: "note.text.badge.plus")
                 .resizable()
                 .frame(width: 60, height: 60)
                 .foregroundStyle(Color("SecondaryColor"))
-            
+
             Text("There is nothing to show now. You can see your passwords and related information here if you add password.")
                 .font(.subheadline)
                 .fontWeight(.medium)
@@ -51,94 +51,102 @@ struct MainScreen: View {
         }
         .padding()
         .frame(width: 300, height: 300)
-        
     }
 
     var passwordList: some View {
-        NavigationStack {
-            List(coreDataModel.passwords){password in
-                NavigationLink(value: password) {
-                    VStack(spacing: 20){
-                        HStack(spacing: 10){
-                            Text("Username:")
-                                .font(.subheadline)
-                                .fontWeight(.medium)
-                                .foregroundStyle(Color("SecondaryColor"))
-                            Text(password.name ?? "")
-                                .font(.subheadline)
-                                .fontWeight(.medium)
-                                .foregroundStyle(Color("SecondaryColor"))
-                            Spacer()
-                            Image(systemName:"doc.on.doc")
-                                .imageScale(.medium)
-                                .foregroundStyle(Color("SecondaryColor"))
-                                .onTapGesture {
-                                    copy(copiedText: password.name ?? "")
-                                }
-                        }
-                        
-                        HStack(spacing:10){
-                            Text("Password:")
-                                .font(.subheadline)
-                                .fontWeight(.medium)
-                                .foregroundStyle(Color("SecondaryColor"))
-                            Text(isPasswordShown ? (password.password ?? "") : "***********")
-                                .font(.subheadline)
-                                .fontWeight(.medium)
-                                .foregroundStyle(Color("SecondaryColor"))
-                            Spacer()
-                            Image(systemName:isPasswordShown ? "eye.slash.fill" : "eye.fill")
-                                .imageScale(.medium)
-                                .foregroundStyle(Color("SecondaryColor"))
-                                .onTapGesture {
-                                    withAnimation(.linear){
-                                        isPasswordShown.toggle()
-                                    }
-                                }
-                            Image(systemName:"doc.on.doc")
-                                .imageScale(.medium)
-                                .padding(.leading, 15)
-                                .foregroundStyle(Color("SecondaryColor"))
-                                .onTapGesture {
-                                    copy(copiedText: password.password ?? "")
-                                }
-                        }
-                        if isCommentShown {
-                            Text("Comment:")
-                                .font(.subheadline)
-                                .fontWeight(.medium)
-                                .foregroundStyle(Color("SecondaryColor"))
-                            Text(password.comment ?? "")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .frame(height: 50)
-                                .minimumScaleFactor(0.5)
-                        }
-                        
-                        Image(systemName: "chevron.down")
+        ScrollView(.vertical) {
+            ForEach(coreDataModel.passwords) { password in
+                VStack(spacing: 10) {
+                    HStack(spacing: 20) {
+                        Text("Username:")
+                            .padding(.leading, 20)
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(Color("MainColor"))
+                        Text(password.name ?? "NaN")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(Color("MainColor"))
+                        Spacer()
+                        Image(systemName: "doc.on.doc")
                             .imageScale(.medium)
-                            .foregroundStyle(Color("SecondaryColor"))
-                            .rotationEffect(Angle(degrees:isCommentShown ? 180 : 0))
+                            .padding(.trailing, 20)
+                            .foregroundStyle(Color("MainColor"))
                             .onTapGesture {
-                                withAnimation(.easeOut){
-                                    isCommentShown.toggle()
-                                }
+                                copy(copiedText: password.name ?? "NaN")
                             }
                     }
-                    .padding()
-                    .background(Color("MainColor"), in:RoundedRectangle(cornerRadius: 5))
+
+                    HStack(spacing: 20) {
+                        Text("Password:")
+                            .padding(.leading, 20)
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(Color("MainColor"))
+                        Text(isPasswordShown ? (password.password ?? "NaN") : "*****")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(Color("MainColor"))
+                        Spacer()
+                        Image(systemName: isPasswordShown ? "eye.slash.fill" : "eye.fill")
+                            .imageScale(.medium)
+                            .foregroundStyle(Color("MainColor"))
+                            .onTapGesture {
+                                withAnimation(.linear(duration: 0.2)) {
+                                    isPasswordShown.toggle()
+                                }
+                            }
+                        Image(systemName: "doc.on.doc")
+                            .imageScale(.medium)
+                            .padding(.trailing, 20)
+                            .foregroundStyle(Color("MainColor"))
+                            .onTapGesture {
+                                copy(copiedText: password.password ?? "")
+                            }
+                    }
+                    VStack(alignment: .leading) {
+                        HStack(spacing: 20){
+                            Text("Comment:")
+                                .padding(.leading, 20)
+                                .font(.caption)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(Color("MainColor"))
+                            
+                            Image(systemName: "chevron.down")
+                                .imageScale(.medium)
+                                .foregroundStyle(Color("MainColor"))
+                                .rotationEffect(Angle(degrees: isCommentShown ? 180 : 0))
+                                .onTapGesture {
+                                    withAnimation(.easeOut) {
+                                        isCommentShown.toggle()
+                                    }
+                                }
+                        }
+                        .padding(.top, 15)
+                        if isCommentShown {
+                            Divider()
+                                .background(Color("MainColor"))
+                            Text(password.comment ?? "NaN")
+                                .padding(.leading, 30)
+                                .frame(height: 30)
+                                .font(.caption)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(Color("MainColor"))
+                                .minimumScaleFactor(0.5)
+                                .multilineTextAlignment(.center)
+                                
+                        }
+                    }
+                    
                 }
-                
-            }
-           
-           
-            .navigationDestination(for: PasswordEntity.self){ _ in
-                EmptyView()
+                .padding()
+                .background(Color("SecondaryColor"), in: RoundedRectangle(cornerRadius: 5))
             }
         }
+        .padding()
     }
-   
-    func copy(copiedText:String) {
+
+    func copy(copiedText: String) {
         UIPasteboard.general.string = copiedText
     }
 }
