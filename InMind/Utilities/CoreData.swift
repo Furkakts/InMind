@@ -52,4 +52,12 @@ class CoreData:ObservableObject {
         try? container.viewContext.save()
         fetchPasswords()
     }
+    
+    func deletePassword(deletedPassword:PasswordEntity) {
+        container.viewContext.delete(deletedPassword)
+        try? container.viewContext.save()
+        fetchPasswords()
+        
+       
+    }
 }

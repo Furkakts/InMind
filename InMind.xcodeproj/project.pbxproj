@@ -11,6 +11,7 @@
 		DC0662C42C4BE7D400BCD53A /* Passwords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC0662C22C4BE7D400BCD53A /* Passwords.xcdatamodeld */; };
 		DC0662C62C4BE81B00BCD53A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0662C52C4BE81B00BCD53A /* CoreData.swift */; };
 		DC0C2B2C2C4FB9D600933EBE /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */; };
+		DC0F88702C53E403005C6AF4 /* PasswordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F886F2C53E403005C6AF4 /* PasswordList.swift */; };
 		DC22299D2C5282E0001FB25B /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22299C2C5282E0001FB25B /* AddPasswordView.swift */; };
 		DC7CF6322C49C28100EDE5BE /* InMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6312C49C28100EDE5BE /* InMindApp.swift */; };
 		DC7CF6342C49C28100EDE5BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6332C49C28100EDE5BE /* ContentView.swift */; };
@@ -26,6 +27,7 @@
 		DC0662C32C4BE7D400BCD53A /* Passwords.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Passwords.xcdatamodel; sourceTree = "<group>"; };
 		DC0662C52C4BE81B00BCD53A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		DC0F886F2C53E403005C6AF4 /* PasswordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordList.swift; sourceTree = "<group>"; };
 		DC22299C2C5282E0001FB25B /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
 		DC7CF62E2C49C28100EDE5BE /* InMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7CF6312C49C28100EDE5BE /* InMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMindApp.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */,
+				DC0F886F2C53E403005C6AF4 /* PasswordList.swift */,
 				DC22299C2C5282E0001FB25B /* AddPasswordView.swift */,
 			);
 			path = MainScreen;
@@ -211,6 +214,7 @@
 			files = (
 				DC0662C12C4BC2A300BCD53A /* SplashScreen.swift in Sources */,
 				DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */,
+				DC0F88702C53E403005C6AF4 /* PasswordList.swift in Sources */,
 				DC0662C42C4BE7D400BCD53A /* Passwords.xcdatamodeld in Sources */,
 				DC7CF6342C49C28100EDE5BE /* ContentView.swift in Sources */,
 				DC0662C62C4BE81B00BCD53A /* CoreData.swift in Sources */,
