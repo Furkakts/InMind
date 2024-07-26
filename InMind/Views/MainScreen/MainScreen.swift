@@ -2,8 +2,6 @@ import SwiftUI
 
 struct MainScreen: View {
     @StateObject var coreDataModel: CoreData
-    @State private var isPasswordShown = true
-    @State private var isCommentShown = false
 
     var body: some View {
         TabView {
@@ -24,17 +22,15 @@ struct MainScreen: View {
     }
 
     func firstTabItem() -> some View {
-        return
-            ZStack {
-                Color("MainColor").ignoresSafeArea(edges: .top)
-                Group {
-                    if coreDataModel.passwords.isEmpty {
-                        contentUnavailable
-                    } else { passwordList }
-                }
-            }
+        return ZStack {
+                  Color("MainColor").ignoresSafeArea(edges: .top)
+                  Group {
+                      if coreDataModel.passwords.isEmpty { contentUnavailable }
+                      else { PasswordList(coreDataModel: coreDataModel) }
+                  }
+               }
     }
-
+    
     var contentUnavailable: some View {
         VStack(spacing: 30) {
             Image(systemName: "note.text.badge.plus")
@@ -51,103 +47,6 @@ struct MainScreen: View {
         }
         .padding()
         .frame(width: 300, height: 300)
-    }
-
-    var passwordList: some View {
-        ScrollView(.vertical) {
-            ForEach(coreDataModel.passwords) { password in
-                VStack(spacing: 10) {
-                    HStack(spacing: 20) {
-                        Text("Username:")
-                            .padding(.leading, 20)
-                            .font(.caption)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(Color("MainColor"))
-                        Text(password.name ?? "NaN")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(Color("MainColor"))
-                        Spacer()
-                        Image(systemName: "doc.on.doc")
-                            .imageScale(.medium)
-                            .padding(.trailing, 20)
-                            .foregroundStyle(Color("MainColor"))
-                            .onTapGesture {
-                                copy(copiedText: password.name ?? "NaN")
-                            }
-                    }
-
-                    HStack(spacing: 20) {
-                        Text("Password:")
-                            .padding(.leading, 20)
-                            .font(.caption)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(Color("MainColor"))
-                        Text(isPasswordShown ? (password.password ?? "NaN") : "*****")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(Color("MainColor"))
-                        Spacer()
-                        Image(systemName: isPasswordShown ? "eye.slash.fill" : "eye.fill")
-                            .imageScale(.medium)
-                            .foregroundStyle(Color("MainColor"))
-                            .onTapGesture {
-                                withAnimation(.linear(duration: 0.2)) {
-                                    isPasswordShown.toggle()
-                                }
-                            }
-                        Image(systemName: "doc.on.doc")
-                            .imageScale(.medium)
-                            .padding(.trailing, 20)
-                            .foregroundStyle(Color("MainColor"))
-                            .onTapGesture {
-                                copy(copiedText: password.password ?? "")
-                            }
-                    }
-                    VStack(alignment: .leading) {
-                        HStack(spacing: 20){
-                            Text("Comment:")
-                                .padding(.leading, 20)
-                                .font(.caption)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(Color("MainColor"))
-                            
-                            Image(systemName: "chevron.down")
-                                .imageScale(.medium)
-                                .foregroundStyle(Color("MainColor"))
-                                .rotationEffect(Angle(degrees: isCommentShown ? 180 : 0))
-                                .onTapGesture {
-                                    withAnimation(.easeOut) {
-                                        isCommentShown.toggle()
-                                    }
-                                }
-                        }
-                        .padding(.top, 15)
-                        if isCommentShown {
-                            Divider()
-                                .background(Color("MainColor"))
-                            Text(password.comment ?? "NaN")
-                                .padding(.leading, 30)
-                                .frame(height: 30)
-                                .font(.caption)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(Color("MainColor"))
-                                .minimumScaleFactor(0.5)
-                                .multilineTextAlignment(.center)
-                                
-                        }
-                    }
-                    
-                }
-                .padding()
-                .background(Color("SecondaryColor"), in: RoundedRectangle(cornerRadius: 5))
-            }
-        }
-        .padding()
-    }
-
-    func copy(copiedText: String) {
-        UIPasteboard.general.string = copiedText
     }
 }
 

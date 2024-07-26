@@ -9,67 +9,98 @@ struct AddPasswordView: View {
     @State private var comment = ""
     @State private var isSameEntryGiven = false
     @State private var isLoadingActivated = false
-    private let alertMessage = "Username/E-mail is invalid or already in your password list.Try again with different username"
+    @State private var alertMessage = ""
     
     var body: some View {
         ZStack {
             Color("MainColor").ignoresSafeArea()
             
-            VStack(spacing: 30){
-                Text("InMind")
-                    .padding(.bottom, 20)
-                    .font(.title)
-                    .bold()
-                    .foregroundStyle(Color("MainColor"))
-
-                VStack{
-                    formText(text: "E-mail / Username")
-                    TextField("E-mail or Username", text:$username)
-                        .textFieldStyle(.roundedBorder)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal)
-                }
-                Divider()
-                    .frame(width:200)
-                    .background(Color("MainColor"))
-                VStack{
-                    formText(text: "Password")
-                    TextField("Password", text:$password)
-                        .textFieldStyle(.roundedBorder)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal)
-                }
-                Divider()
-                    .frame(width:200)
-                    .background(Color("MainColor"))
-                VStack(alignment:.center){
-                    formText(text:"Comment")
-                    TextEditor(text: $comment)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal)
-                        .frame(height:100)
-                }
+            VStack(spacing: 20){
+                appName
+                
+                textField(fieldText: $username, text:"E-mail / Username")
+                textField(fieldText: $password, text:"Password")
+                textEditor(editorText: $comment, text: "Comment")
                 
                 HStack(spacing:50){
                     resetButton
                     saveButton
-                }
-                .padding(.top, 30)
-            }
+                } .padding(.top, 30)
+            }  // End VStack
             .padding()
+            .padding(.horizontal, 30)
             .background{
-                RoundedRectangle(cornerRadius: 5)
-                   .fill(Color("SecondaryColor"))
-                   .frame(width:UIScreen.main.bounds.width-20, height: 650)
-                
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color("SecondaryColor"))
+                    .frame(width:UIScreen.main.bounds.width-20, height: 650)
             }
             .alert(alertMessage, isPresented: $isSameEntryGiven) {
-                Button("", role:.cancel){
+                Button("OK", role:.cancel){
                     isSameEntryGiven.toggle()
-                    username = ""
+                    reset()
                 }
             }
+        } // End ZStack
+    }
+    
+    func textField(fieldText: Binding<String>, text: String) -> some View {
+        return Group {
+            VStack {
+                formText(text: text)
+                TextField("", text: fieldText, prompt: prompt(text: text))
+                    .padding(.vertical, 10)
+                    .foregroundStyle(Color("SecondaryColor"))
+                    .background(Color("MainColor").opacity(0.8))
+                    .cornerRadius(5)
+                    .multilineTextAlignment(.center)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+            }
+            divider
         }
+    }
+    
+    func textEditor(editorText:Binding<String>, text:String) -> some View {
+        VStack(alignment:.center){
+            formText(text:text)
+            TextEditor(text: editorText)
+                .frame(height:100)
+                .scrollContentBackground(.hidden)
+                .foregroundStyle(Color("SecondaryColor"))
+                .background(Color("MainColor").opacity(0.8))
+                .multilineTextAlignment(.leading)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
+                .overlay {
+                    if comment.isEmpty {
+                        commentPlaceholder
+                    }
+                }
+        }
+    }
+    
+    var commentPlaceholder: some View {
+        HStack{
+            Text("Write comments here!")
+                .font(.headline)
+                .fontWeight(.light)
+                .foregroundStyle(Color("SecondaryColor"))
+                .opacity(0.9)
+        }
+    }
+    
+    var appName: some View {
+        Text("InMind")
+            .padding(.bottom, 20)
+            .font(.title)
+            .bold()
+            .foregroundStyle(Color("MainColor"))
+    }
+    
+    var divider: some View {
+        Divider()
+            .frame(width:200)
+            .background(Color("MainColor"))
     }
     
     var resetButton: some View {
@@ -84,10 +115,11 @@ struct AddPasswordView: View {
         Button {
             isLoadingActivated = true
             
-            if checkAvailability(username:username) {
+            if checkEmptyness(username: username, password: password) || checkAvailability(username:username) {
                 isLoadingActivated = false
                 isSameEntryGiven = true
             } else {
+                if comment.isEmpty { comment = "No Comment" }
                 coreDataModel.addPassword(username:username, password:password, comment:comment)
                 isLoadingActivated = false
                 reset()
@@ -106,6 +138,11 @@ struct AddPasswordView: View {
             .font(.title)
             .controlSize(.large)
             .tint(Color("SecondaryColor"))
+    }
+    
+    func prompt(text:String) -> Text {
+        Text(text)
+            .foregroundColor(Color("SecondaryColor").opacity(0.7))
     }
     
     func formText(text:String) -> some View {
@@ -129,8 +166,21 @@ struct AddPasswordView: View {
         comment = ""
     }
     
+    func checkEmptyness(username:String, password:String) -> Bool{
+        if username.isEmpty || password.isEmpty {
+            alertMessage = "You can't leave fields empty.Please fill them."
+            return true
+        }
+        return false
+    }
+    
     func checkAvailability(username:String) -> Bool{
-        coreDataModel.passwords.map { password in password.name }.contains(username)
+        let result = coreDataModel.passwords.map { password in password.name }.contains(username)
+        if result {
+            alertMessage = "Entry for username or e-mail is invalid or already in your list.Please Try again!"
+             return true
+       }
+        return false
     }
 }
 
