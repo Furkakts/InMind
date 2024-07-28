@@ -7,9 +7,10 @@ struct AddPasswordView: View {
     @State private var username = ""
     @State private var password = ""
     @State private var comment = ""
+    @State private var alertMessage = ""
     @State private var isSameEntryGiven = false
     @State private var isLoadingActivated = false
-    @State private var alertMessage = ""
+    @State private var isSaved = false
     
     var body: some View {
         ZStack {
@@ -50,7 +51,7 @@ struct AddPasswordView: View {
                 TextField("", text: fieldText, prompt: prompt(text: text))
                     .padding(.vertical, 10)
                     .foregroundStyle(Color("SecondaryColor"))
-                    .background(Color("MainColor").opacity(0.8))
+                    .background(Color("MainColor"))
                     .cornerRadius(5)
                     .multilineTextAlignment(.center)
                     .textInputAutocapitalization(.never)
@@ -67,7 +68,7 @@ struct AddPasswordView: View {
                 .frame(height:100)
                 .scrollContentBackground(.hidden)
                 .foregroundStyle(Color("SecondaryColor"))
-                .background(Color("MainColor").opacity(0.8))
+                .background(Color("MainColor"))
                 .multilineTextAlignment(.leading)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
@@ -120,8 +121,15 @@ struct AddPasswordView: View {
                 isSameEntryGiven = true
             } else {
                 if comment.isEmpty { comment = "No Comment" }
-                coreDataModel.addPassword(username:username, password:password, comment:comment)
+                let indentedComment = "         " + comment
+                coreDataModel.addPassword(username:username, password:password, comment: indentedComment)
+                
                 isLoadingActivated = false
+                isSaved = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.75){
+                    isSaved = false
+                }
                 reset()
             }
         } label: {
@@ -129,7 +137,18 @@ struct AddPasswordView: View {
                 buttonText(text: "Save")
                 if isLoadingActivated {
                     progressView }
+                if isSaved {
+                    Text("Saved")
+                        .padding(10)
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .foregroundStyle(Color("MainColor"))
+                        .background(Color("SecondaryColor"), in: RoundedRectangle(cornerRadius: 8))
+                }
             }
+        }
+        .overlay(alignment:.topTrailing){
+           
         }
     }
     
