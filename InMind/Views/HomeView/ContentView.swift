@@ -9,8 +9,8 @@ struct ContentView: View {
             Color("MainColor").ignoresSafeArea()
             
             if !coredataModel.isLoadingCompleted {
-                SplashScreen(cdModel:coredataModel)}
-            
+                SplashScreen(cdModel:coredataModel)
+            }
             else {
                 if !isOnboardingShown {
                     OnboardingView()}

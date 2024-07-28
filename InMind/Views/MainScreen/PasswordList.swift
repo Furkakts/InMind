@@ -4,39 +4,41 @@ struct PasswordList: View {
     @StateObject var coreDataModel:CoreData
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            ForEach(coreDataModel.passwords) { password in
-                VStack(spacing: 20) {
-                    HStack{
-                        VStack(alignment:.leading, spacing: 10){
-                            usernamePasswordSection(passwordData: password.name ?? "NaN", text: "Username:")
-                            usernamePasswordSection(passwordData: password.password ?? "NaN", text: "Password:")
-                        }
-                        Spacer()
-                        HStack(spacing: 15) {
-                            Button {
-                                
-                            } label: {
-                                button(systemImageName: "pencil.circle") }
-                            
-                            Button {
-                                coreDataModel.deletePassword(deletedPassword: password)
-                            } label: {
-                                button(systemImageName: "trash.circle") }
-                        }
-                        .padding(.trailing, 15)
-                    }
-                    commentSection(passwordData: password.comment ?? "NaN", text: "Comment")
-                }
+        VStack(alignment:.leading, spacing: 10){
+            Text("Passwords")
+                .padding(.leading, 40)
                 .padding(.vertical, 10)
-                .background(Color("SecondaryColor"), in: RoundedRectangle(cornerRadius: 5))
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundStyle(Color("SecondaryColor"))
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach(coreDataModel.passwords) { password in
+                    VStack(spacing: 20) {
+                        HStack{
+                            VStack(alignment:.leading, spacing: 10){
+                                usernamePasswordSection(passwordData: password.name ?? "NaN", text: "Username:")
+                                usernamePasswordSection(passwordData: password.password ?? "NaN", text: "Password:")
+                            }
+                            Spacer()
+                            Button {
+                                    coreDataModel.deletePassword(deletedPassword: password)
+                            } label: {
+                                 deleteButton
+                            } .padding(.trailing, 35)
+                        }
+                        commentSection(passwordData: password.comment ?? "NaN", text: "Comment")
+                    }
+                    .padding(.vertical, 20)
+                    .background(Color("SecondaryColor"), in: RoundedRectangle(cornerRadius: 5))
+                }
             }
+            .padding(5)
         }
-        .padding(5)
     }
     
-    func button(systemImageName:String) -> some View {
-        Image(systemName:systemImageName)
+    var deleteButton: some View {
+        Image(systemName:"trash.circle")
             .resizable()
             .frame(width: 30, height: 30)
             .foregroundStyle(Color("MainColor"))
@@ -56,7 +58,7 @@ struct PasswordList: View {
                 .minimumScaleFactor(0.5)
             Image(systemName: "doc.on.doc")
                 .imageScale(.medium)
-                .padding(.trailing, 25)
+                .padding(.leading, 10)
                 .foregroundStyle(Color("MainColor"))
                 .onTapGesture {
                     copy(copiedText:passwordData)
