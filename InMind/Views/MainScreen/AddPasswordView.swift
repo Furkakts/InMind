@@ -129,8 +129,9 @@ struct AddPasswordView: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.75){
                     isSaved = false
+                    reset()
                 }
-                reset()
+             
             }
         } label: {
             ZStack{
