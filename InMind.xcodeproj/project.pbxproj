@@ -7,18 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC0662C12C4BC2A300BCD53A /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0662C02C4BC2A300BCD53A /* SplashScreen.swift */; };
+		DC0662C42C4BE7D400BCD53A /* Passwords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC0662C22C4BE7D400BCD53A /* Passwords.xcdatamodeld */; };
+		DC0662C62C4BE81B00BCD53A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0662C52C4BE81B00BCD53A /* CoreData.swift */; };
+		DC0C2B2C2C4FB9D600933EBE /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */; };
+		DC0F88702C53E403005C6AF4 /* PasswordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F886F2C53E403005C6AF4 /* PasswordList.swift */; };
+		DC22299D2C5282E0001FB25B /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22299C2C5282E0001FB25B /* AddPasswordView.swift */; };
 		DC7CF6322C49C28100EDE5BE /* InMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6312C49C28100EDE5BE /* InMindApp.swift */; };
 		DC7CF6342C49C28100EDE5BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6332C49C28100EDE5BE /* ContentView.swift */; };
 		DC7CF6362C49C28300EDE5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7CF6352C49C28300EDE5BE /* Assets.xcassets */; };
 		DC7CF6392C49C28300EDE5BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7CF6382C49C28300EDE5BE /* Preview Assets.xcassets */; };
+		DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */; };
+		DC8DCE6C2C4AD5A000BC1136 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */; };
+		DC8DCE6F2C4AD6BE00BC1136 /* TextForOnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC0662C02C4BC2A300BCD53A /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		DC0662C32C4BE7D400BCD53A /* Passwords.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Passwords.xcdatamodel; sourceTree = "<group>"; };
+		DC0662C52C4BE81B00BCD53A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		DC0F886F2C53E403005C6AF4 /* PasswordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordList.swift; sourceTree = "<group>"; };
+		DC22299C2C5282E0001FB25B /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
 		DC7CF62E2C49C28100EDE5BE /* InMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7CF6312C49C28100EDE5BE /* InMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMindApp.swift; sourceTree = "<group>"; };
 		DC7CF6332C49C28100EDE5BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC7CF6352C49C28300EDE5BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC7CF6382C49C28300EDE5BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextForOnboardingPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +50,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC0662BF2C4BC28C00BCD53A /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DC0662C02C4BC2A300BCD53A /* SplashScreen.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		DC0662C72C4BF07800BCD53A /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				DC7CF6332C49C28100EDE5BE /* ContentView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		DC0C2B2A2C4FB9C300933EBE /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */,
+				DC0F886F2C53E403005C6AF4 /* PasswordList.swift */,
+				DC22299C2C5282E0001FB25B /* AddPasswordView.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
 		DC7CF6252C49C28100EDE5BE = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +95,12 @@
 		DC7CF6302C49C28100EDE5BE /* InMind */ = {
 			isa = PBXGroup;
 			children = (
+				DC8DCE6D2C4AD69A00BC1136 /* Utilities */,
+				DC8DCE672C4AD30400BC1136 /* Views */,
 				DC7CF6312C49C28100EDE5BE /* InMindApp.swift */,
-				DC7CF6332C49C28100EDE5BE /* ContentView.swift */,
 				DC7CF6352C49C28300EDE5BE /* Assets.xcassets */,
 				DC7CF6372C49C28300EDE5BE /* Preview Content */,
+				DC0662C22C4BE7D400BCD53A /* Passwords.xcdatamodeld */,
 			);
 			path = InMind;
 			sourceTree = "<group>";
@@ -65,6 +111,35 @@
 				DC7CF6382C49C28300EDE5BE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC8DCE672C4AD30400BC1136 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC0C2B2A2C4FB9C300933EBE /* MainScreen */,
+				DC0662C72C4BF07800BCD53A /* HomeView */,
+				DC0662BF2C4BC28C00BCD53A /* SplashScreen */,
+				DC8DCE6A2C4AD58500BC1136 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC8DCE6A2C4AD58500BC1136 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */,
+				DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DC8DCE6D2C4AD69A00BC1136 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */,
+				DC0662C52C4BE81B00BCD53A /* CoreData.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +212,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0662C12C4BC2A300BCD53A /* SplashScreen.swift in Sources */,
+				DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */,
+				DC0F88702C53E403005C6AF4 /* PasswordList.swift in Sources */,
+				DC0662C42C4BE7D400BCD53A /* Passwords.xcdatamodeld in Sources */,
 				DC7CF6342C49C28100EDE5BE /* ContentView.swift in Sources */,
+				DC0662C62C4BE81B00BCD53A /* CoreData.swift in Sources */,
+				DC22299D2C5282E0001FB25B /* AddPasswordView.swift in Sources */,
 				DC7CF6322C49C28100EDE5BE /* InMindApp.swift in Sources */,
+				DC0C2B2C2C4FB9D600933EBE /* MainScreen.swift in Sources */,
+				DC8DCE6F2C4AD6BE00BC1136 /* TextForOnboardingPage.swift in Sources */,
+				DC8DCE6C2C4AD5A000BC1136 /* OnboardingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +354,12 @@
 				DEVELOPMENT_TEAM = 88UZ42L7TB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,9 +367,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Furkan.InMind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,11 +387,12 @@
 				DEVELOPMENT_TEAM = 88UZ42L7TB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +400,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Furkan.InMind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -339,6 +431,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DC0662C22C4BE7D400BCD53A /* Passwords.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC0662C32C4BE7D400BCD53A /* Passwords.xcdatamodel */,
+			);
+			currentVersion = DC0662C32C4BE7D400BCD53A /* Passwords.xcdatamodel */;
+			path = Passwords.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DC7CF6262C49C28100EDE5BE /* Project object */;
 }
