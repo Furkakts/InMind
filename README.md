@@ -7,4 +7,4 @@ Built with Swift and SwiftUI. Stores passwords and other related data in CoreDat
 
 ### App Images
 
-![SplashScreen](https://github.com/user-attachments/assets/dcd7814a-7b34-41de-a1b3-28a7736d0323)
+![SplashScreen](https://github.com/user-attachments/assets/66c3237b-c3b7-4dbf-bb4f-2005902c6357)
