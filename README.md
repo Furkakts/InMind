@@ -1,4 +1,4 @@
-# InMind
+# <img src="https://github.com/user-attachments/assets/c2f41651-c6c2-45bc-983a-8ed4e75e9bca" width="50" height="50"> InMind
 
 The application is crafted to store your passwords. With this app you don't need to memorize or scribble your passwords on a piece of paper anymore. Moreover you can attach notes to your passwords to remember some details about a password. And whenever you need to use your password, all you need to do is copy and paste your password.
 
@@ -12,7 +12,7 @@ The application is crafted to store your passwords. With this app you don't need
 
 **UIPasteboard**, used to copy and paste with a single click.
 
-## How to Run Project
+## How to Run
 
 Downloading as a zip file is recommended not to meet Xcode related errors and problems.
 
