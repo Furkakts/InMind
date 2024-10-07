@@ -4,7 +4,7 @@ The application is crafted to store your passwords. With this app you don't need
 
 ## Components
 
-**Onboarding**, used to give information and instructions about the app to make most of it.
+**Onboarding**, used to give information and instructions about the app to get the most out of it.
 
 **CoreData**, used to store passwords and notes locally.
 
