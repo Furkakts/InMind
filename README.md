@@ -26,5 +26,5 @@ My own application. Received no contribution.
 <img src="https://github.com/user-attachments/assets/d6d55df3-08fb-4712-afaa-aaa42029ee38" width="200" height="430">
 <img src="https://github.com/user-attachments/assets/06ab1b65-1e8f-446a-aae0-ed01df1b52df" width="200" height="430">
 <img src="https://github.com/user-attachments/assets/bdc6c0df-1dce-41a0-a232-d87f2d44b133" width="200" height="430">
-<img src="https://github.com/user-attachments/assets/b9cb0d18-31a1-49a3-aa67-56d0331fe679" width="200" height="430">
+<img src="https://github.com/user-attachments/assets/a819cde0-e90a-4e80-a147-ba537126150f" width="200" height="430">
 
