@@ -11,6 +11,7 @@ struct AddPasswordView: View {
     @State private var isSameEntryGiven = false
     @State private var isLoadingActivated = false
     @State private var isSaved = false
+    @FocusState private var isFocused
     
     var body: some View {
         ZStack {
@@ -67,8 +68,9 @@ struct AddPasswordView: View {
             TextEditor(text: editorText)
                 .frame(height:100)
                 .scrollContentBackground(.hidden)
+                .focused($isFocused)
                 .foregroundStyle(Color("SecondaryColor"))
-                .background(Color("MainColor"))
+                .background(Color("MainColor"), in: RoundedRectangle(cornerRadius: 5, style: .continuous))
                 .multilineTextAlignment(.leading)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
@@ -129,6 +131,7 @@ struct AddPasswordView: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.75){
                     isSaved = false
+                    isFocused = false
                     reset()
                 }
              
