@@ -1,0 +1,303 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    "%@.%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@.%2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "Access passwords without effort." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zorlanmadan şifrelerine ulaş."
+          }
+        }
+      }
+    },
+    "Add" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekle"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri"
+          }
+        }
+      }
+    },
+    "Change" : {
+
+    },
+    "Comment" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not"
+          }
+        }
+      }
+    },
+    "E-mail / Username" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mail / Kullanıcı Adı"
+          }
+        }
+      }
+    },
+    "Entry for username or e-mail is invalid or already in your list.Please Try again!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Girdiğin kullanıcı adı veya email  geçersiz yada zaten listende var. Lütfen kontrol edip tekrar deneyin!"
+          }
+        }
+      }
+    },
+    "Feedbacks are as vital as passwords." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri dönüşlerinizde şifreleriniz kadar önemli."
+          }
+        }
+      }
+    },
+    "Finish" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonlandır"
+          }
+        }
+      }
+    },
+    "InMind" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "InMind"
+          }
+        }
+      }
+    },
+    "Next" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İleri"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamam"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şifrelerim"
+          }
+        }
+      }
+    },
+    "Password:" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şifre:"
+          }
+        }
+      }
+    },
+    "Passwords" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şifrelerim"
+          }
+        }
+      }
+    },
+    "Please feed us with your feedbacks.Don't hide them from us.They are not supposed to be as secret as your passwords." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lütfen bizi geri dönüşlerinizle besleyin. Onları bizden saklamayın. Geri dönüşleriniz şifreleriniz kadar gizli olmamalı."
+          }
+        }
+      }
+    },
+    "Reset" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıfırla"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaydet"
+          }
+        }
+      }
+    },
+    "Saved" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaydedildi"
+          }
+        }
+      }
+    },
+    "Store passwords securely." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şifrelerini güvenle kaydet."
+          }
+        }
+      }
+    },
+    "There is nothing to show now. You can see your passwords and related information here if you add password." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gösterilecek bişey yok. Eğer şifre bilgilerinizi eklerseniz, bilgilerinizi burada görebilirsiniz."
+          }
+        }
+      }
+    },
+    "Unknown error occurred.Please Try again!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilinmeyen Hata. Lütfen tekrar deneyin."
+          }
+        }
+      }
+    },
+    "Username:" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullanıcı Adı:"
+          }
+        }
+      }
+    },
+    "We use passwords everyday on every corner of our lifes.Not to forget a password,some takes note,some memorizes.In order to save you from this difficulty, I offer you a remedy, InMind." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hayatımızın her yerinde şifreleri kullanıyoruz. Bazılarımız unutmamak için not alıyor, bazılarıysa ezberlemeyi tercih ediyor. Sizi bu dertten kurtarmanın tek yolu InMind."
+          }
+        }
+      }
+    },
+    "Welcome to InMind!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "InMind Hoşgeldin!"
+          }
+        }
+      }
+    },
+    "Write comments here!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not Ekle."
+          }
+        }
+      }
+    },
+    "You can list all your passwords and find one that you search for with ease.You can hide your passwords or copy them directly into other applications." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bütün şifrelerinize rahatlıkla ulaşabilir, aradığınıza kolaylıkla erişebilirsiniz. Şifrelerinizi diğerlerinden gizleyebilir ve tek tıkla kopyalayarak istediğiniz yerde kullanabilirsiniz."
+          }
+        }
+      }
+    },
+    "You can store passwords of social media accounts or credit cards in this app.Then you can reach them easily whenever you need without memorizing." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulamada sosyal medya hesaplarınızın yada kredi kartlarınızın şifrelerini saklayabilir ve ihtiyacınız olduğunda ezberlemeye gerek kalmadan kullanabilirsiniz."
+          }
+        }
+      }
+    },
+    "You can't leave fields empty.Please fill them." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alanları boş bırakamazsın. Lütfen doldurun."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

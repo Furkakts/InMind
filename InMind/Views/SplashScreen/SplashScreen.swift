@@ -9,7 +9,7 @@ struct SplashScreen: View {
             Text(appName)
                 .padding(.top, 150)
                 .font(.system(size: 50, weight:.semibold, design: .rounded))
-                .foregroundStyle(Color("SecondaryColor"))
+                .foregroundStyle(Color("SideColor"))
             Spacer()
             bottomSection
                 .padding(.horizontal)
@@ -29,18 +29,18 @@ struct SplashScreen: View {
                     .frame(maxWidth:.infinity)
                     .frame(height:25)
                     .foregroundStyle(Color("MainColor"))
-                    .background(Color("SecondaryColor"), in:RoundedRectangle(cornerRadius: 3))
+                    .background(Color("SideColor"), in:RoundedRectangle(cornerRadius: 3))
             } else {
                 ProgressView()
                     .font(.title)
                     .controlSize(.regular)
-                    .tint(Color("SecondaryColor"))
+                    .tint(Color("SideColor"))
             }
                 
             Text("\(Bundle.main.appVersionLong).\(Bundle.main.appBuild)")
                .font(.footnote)
                .fontWeight(.semibold)
-               .foregroundStyle(Color("SecondaryColor"))
+               .foregroundStyle(Color("SideColor"))
         }
     }
 }

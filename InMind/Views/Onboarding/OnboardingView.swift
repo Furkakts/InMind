@@ -4,13 +4,13 @@ struct OnboardingView: View {
     @State private var pageNumberInOnboardingView = 1
     
       // Takes data from file and fills title and text arrays below
-    private let pageTitle:[String] = TextForOnboardingPage.titleOfPage
-    private var titleForEachOnboardingPage:String {
+    private let pageTitle:[LocalizedStringKey] = TextForOnboardingPage.titleOfPage
+    private var titleForEachOnboardingPage:LocalizedStringKey {
         pageTitle[pageNumberInOnboardingView-1]
     }
     
-    private let pageText:[String] = TextForOnboardingPage.textOfPage
-    private var textForEachOnboardingPage:String {
+    private let pageText:[LocalizedStringKey] = TextForOnboardingPage.textOfPage
+    private var textForEachOnboardingPage:LocalizedStringKey {
         pageText[pageNumberInOnboardingView-1]
     }
     

@@ -17,7 +17,7 @@ struct MainScreen: View {
         }
         .tint(Color("MainColor"))
         .onAppear {
-            UITabBar.appearance().backgroundColor = UIColor(Color("SecondaryColor"))
+            UITabBar.appearance().backgroundColor = UIColor(Color("SideColor"))
         }
     }
 
@@ -36,12 +36,12 @@ struct MainScreen: View {
             Image(systemName: "note.text.badge.plus")
                 .resizable()
                 .frame(width: 60, height: 60)
-                .foregroundStyle(Color("SecondaryColor"))
+                .foregroundStyle(Color("SideColor"))
 
             Text("There is nothing to show now. You can see your passwords and related information here if you add password.")
                 .font(.subheadline)
                 .fontWeight(.medium)
-                .foregroundStyle(Color("SecondaryColor"))
+                .foregroundStyle(Color("SideColor"))
                 .kerning(1.0)
                 .multilineTextAlignment(.center)
         }

@@ -4,8 +4,8 @@ struct OnboardingPage: View {
     @AppStorage("isShown") private var isOnboardingShown = false
     @Binding var pageNumber:Int
     private let appName = "InMind"
-    var title:String
-    var text:String
+    var title:LocalizedStringKey
+    var text:LocalizedStringKey
     let numberOfPages:Int
     
     var body:some View {
@@ -20,7 +20,7 @@ struct OnboardingPage: View {
         }
         .padding()
         .frame(width:UIScreen.main.bounds.size.width - 20, height:500)
-        .background(Color("SecondaryColor"), in:RoundedRectangle(cornerRadius:5))
+        .background(Color("SideColor"), in:RoundedRectangle(cornerRadius:5))
         .transition(.move(edge: .trailing))
     }
     
@@ -44,7 +44,7 @@ struct OnboardingPage: View {
             }
             .padding(.vertical,10)
             .font(.headline)
-            .foregroundStyle(Color("SecondaryColor"))
+            .foregroundStyle(Color("SideColor"))
             .background(Color("MainColor"), in:RoundedRectangle(cornerRadius:5))
         }
     }
@@ -81,8 +81,8 @@ struct AppLogo:View {
 }
 
 struct PageDescription:View {
-    var title:String
-    var text:String
+    var title:LocalizedStringKey
+    var text:LocalizedStringKey
     
     var body: some View{
         VStack(spacing:20){

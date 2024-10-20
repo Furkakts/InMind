@@ -10,7 +10,7 @@ struct PasswordList: View {
                 .padding(.vertical, 10)
                 .font(.title2)
                 .fontWeight(.bold)
-                .foregroundStyle(Color("SecondaryColor"))
+                .foregroundStyle(Color("SideColor"))
             
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(coreDataModel.passwords) { password in
@@ -30,7 +30,7 @@ struct PasswordList: View {
                         commentSection(passwordData: password.comment ?? "NaN", text: "Comment")
                     }
                     .padding(.vertical, 20)
-                    .background(Color("SecondaryColor"), in: RoundedRectangle(cornerRadius: 5))
+                    .background(Color("SideColor"), in: RoundedRectangle(cornerRadius: 5))
                 }
             }
             .padding(5)
@@ -44,7 +44,7 @@ struct PasswordList: View {
             .foregroundStyle(Color("MainColor"))
     }
     
-    func usernamePasswordSection(passwordData: String, text:String) -> some View {
+    func usernamePasswordSection(passwordData: String, text:LocalizedStringKey) -> some View {
         HStack(spacing: 5) {
             Text(text)
                 .padding(.leading, 20)
@@ -66,7 +66,7 @@ struct PasswordList: View {
         }
     }
     
-    func commentSection(passwordData: String, text:String) -> some View {
+    func commentSection(passwordData: String, text:LocalizedStringKey) -> some View {
         VStack(alignment:.leading, spacing: 5){
             Text(text)
                 .padding(.bottom, 5)

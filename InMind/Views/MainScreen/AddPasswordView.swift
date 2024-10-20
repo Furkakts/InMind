@@ -7,7 +7,7 @@ struct AddPasswordView: View {
     @State private var username = ""
     @State private var password = ""
     @State private var comment = ""
-    @State private var alertMessage = ""
+    @State private var alertMessage: LocalizedStringKey = ""
     @State private var isSameEntryGiven = false
     @State private var isLoadingActivated = false
     @State private var isSaved = false
@@ -21,7 +21,7 @@ struct AddPasswordView: View {
                 appName
                 
                 textField(fieldText: $username, text:"E-mail / Username")
-                textField(fieldText: $password, text:"Password")
+                textField(fieldText: $password, text: LocalizedStringResource("Password", table: "Extra"))
                 textEditor(editorText: $comment, text: "Comment")
                 
                 HStack(spacing:50){
@@ -33,7 +33,7 @@ struct AddPasswordView: View {
             .padding(.horizontal, 30)
             .background{
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(Color("SecondaryColor"))
+                    .fill(Color("SideColor"))
                     .frame(width:UIScreen.main.bounds.width-20, height: 650)
             }
             .alert(alertMessage, isPresented: $isSameEntryGiven) {
@@ -45,13 +45,13 @@ struct AddPasswordView: View {
         } // End ZStack
     }
     
-    func textField(fieldText: Binding<String>, text: String) -> some View {
+    func textField(fieldText: Binding<String>, text: LocalizedStringResource) -> some View {
         return Group {
             VStack {
                 formText(text: text)
                 TextField("", text: fieldText, prompt: prompt(text: text))
                     .padding(.vertical, 10)
-                    .foregroundStyle(Color("SecondaryColor"))
+                    .foregroundStyle(Color("SideColor"))
                     .background(Color("MainColor"))
                     .cornerRadius(5)
                     .multilineTextAlignment(.center)
@@ -62,14 +62,14 @@ struct AddPasswordView: View {
         }
     }
     
-    func textEditor(editorText:Binding<String>, text:String) -> some View {
+    func textEditor(editorText:Binding<String>, text:LocalizedStringResource) -> some View {
         VStack(alignment:.center){
             formText(text:text)
             TextEditor(text: editorText)
                 .frame(height:100)
                 .scrollContentBackground(.hidden)
                 .focused($isFocused)
-                .foregroundStyle(Color("SecondaryColor"))
+                .foregroundStyle(Color("SideColor"))
                 .background(Color("MainColor"), in: RoundedRectangle(cornerRadius: 5, style: .continuous))
                 .multilineTextAlignment(.leading)
                 .textInputAutocapitalization(.never)
@@ -87,7 +87,7 @@ struct AddPasswordView: View {
             Text("Write comments here!")
                 .font(.headline)
                 .fontWeight(.light)
-                .foregroundStyle(Color("SecondaryColor"))
+                .foregroundStyle(Color("SideColor"))
                 .opacity(0.9)
         }
     }
@@ -122,7 +122,7 @@ struct AddPasswordView: View {
                 isLoadingActivated = false
                 isSameEntryGiven = true
             } else {
-                if comment.isEmpty { comment = "No Comment" }
+                if comment.isEmpty { comment = "NaN" }
                 let indentedComment = "         " + comment
                 coreDataModel.addPassword(username:username, password:password, comment: indentedComment)
                 
@@ -147,7 +147,7 @@ struct AddPasswordView: View {
                         .font(.caption)
                         .fontWeight(.medium)
                         .foregroundStyle(Color("MainColor"))
-                        .background(Color("SecondaryColor"), in: RoundedRectangle(cornerRadius: 8))
+                        .background(Color("SideColor"), in: RoundedRectangle(cornerRadius: 8))
                 }
             }
         }
@@ -160,26 +160,26 @@ struct AddPasswordView: View {
         ProgressView()
             .font(.title)
             .controlSize(.large)
-            .tint(Color("SecondaryColor"))
+            .tint(Color("SideColor"))
     }
     
-    func prompt(text:String) -> Text {
+    func prompt(text:LocalizedStringResource) -> Text {
         Text(text)
-            .foregroundColor(Color("SecondaryColor").opacity(0.7))
+            .foregroundColor(Color("SideColor").opacity(0.7))
     }
     
-    func formText(text:String) -> some View {
+    func formText(text:LocalizedStringResource) -> some View {
         Text(text)
             .font(.subheadline)
             .fontWeight(.medium)
             .foregroundStyle(Color("MainColor"))
     }
     
-    func buttonText(text:String) -> some View {
+    func buttonText(text:LocalizedStringKey) -> some View {
         Text(text)
-            .padding(.horizontal, 40)
+            .padding(.horizontal, 30)
             .padding(.vertical, 15)
-            .foregroundStyle(Color("SecondaryColor"))
+            .foregroundStyle(Color("SideColor"))
             .background(Color("MainColor"), in: RoundedRectangle(cornerRadius: 8))
     }
     

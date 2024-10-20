@@ -20,6 +20,8 @@
 		DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */; };
 		DC8DCE6C2C4AD5A000BC1136 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */; };
 		DC8DCE6F2C4AD6BE00BC1136 /* TextForOnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */; };
+		DCFAD29B2CC54AD700BFC8E2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DCFAD29A2CC54AD700BFC8E2 /* Localizable.xcstrings */; };
+		DCFAD2AF2CC58B5000BFC8E2 /* Extra.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DCFAD2AE2CC58B5000BFC8E2 /* Extra.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextForOnboardingPage.swift; sourceTree = "<group>"; };
+		DCFAD29A2CC54AD700BFC8E2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		DCFAD2AE2CC58B5000BFC8E2 /* Extra.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Extra.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				DC7CF6352C49C28300EDE5BE /* Assets.xcassets */,
 				DC7CF6372C49C28300EDE5BE /* Preview Content */,
 				DC0662C22C4BE7D400BCD53A /* Passwords.xcdatamodeld */,
+				DCFAD29A2CC54AD700BFC8E2 /* Localizable.xcstrings */,
+				DCFAD2AE2CC58B5000BFC8E2 /* Extra.xcstrings */,
 			);
 			path = InMind;
 			sourceTree = "<group>";
@@ -170,7 +176,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					DC7CF62D2C49C28100EDE5BE = {
 						CreatedOnToolsVersion = 14.2;
@@ -183,6 +189,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				tr,
 				Base,
 			);
 			mainGroup = DC7CF6252C49C28100EDE5BE;
@@ -202,6 +209,8 @@
 			files = (
 				DC7CF6392C49C28300EDE5BE /* Preview Assets.xcassets in Resources */,
 				DC7CF6362C49C28300EDE5BE /* Assets.xcassets in Resources */,
+				DCFAD2AF2CC58B5000BFC8E2 /* Extra.xcstrings in Resources */,
+				DCFAD29B2CC54AD700BFC8E2 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +242,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -265,6 +276,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -285,6 +297,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -293,6 +306,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -325,6 +340,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -338,6 +354,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};

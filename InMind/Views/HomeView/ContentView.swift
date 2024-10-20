@@ -15,7 +15,10 @@ struct ContentView: View {
                 if !isOnboardingShown {
                     OnboardingView()}
                 else {
-                    MainScreen(coreDataModel: coredataModel)
+                    VStack{
+                        Button("Change"){isOnboardingShown = false}
+                        MainScreen(coreDataModel: coredataModel)
+                    }
                 }
             }
         }
