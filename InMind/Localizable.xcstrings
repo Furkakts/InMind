@@ -35,6 +35,16 @@
         }
       }
     },
+    "An unknown error occurred. Try again later !" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hata oluştu. Sonra tekrar deneyin ! "
+          }
+        }
+      }
+    },
     "Back" : {
       "localizations" : {
         "tr" : {
@@ -44,9 +54,6 @@
           }
         }
       }
-    },
-    "Change" : {
-
     },
     "Comment" : {
       "localizations" : {
@@ -214,16 +221,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gösterilecek bişey yok. Eğer şifre bilgilerinizi eklerseniz, bilgilerinizi burada görebilirsiniz."
-          }
-        }
-      }
-    },
-    "Unknown error occurred.Please Try again!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bilinmeyen Hata. Lütfen tekrar deneyin."
           }
         }
       }

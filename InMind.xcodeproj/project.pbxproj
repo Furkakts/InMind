@@ -20,6 +20,8 @@
 		DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */; };
 		DC8DCE6C2C4AD5A000BC1136 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */; };
 		DC8DCE6F2C4AD6BE00BC1136 /* TextForOnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */; };
+		DCF5FF5E2CFA758600441FA4 /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF5FF5D2CFA758600441FA4 /* VersionView.swift */; };
+		DCF5FF602CFA79B300441FA4 /* DataProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF5FF5F2CFA79B300441FA4 /* DataProgressView.swift */; };
 		DCFAD29B2CC54AD700BFC8E2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DCFAD29A2CC54AD700BFC8E2 /* Localizable.xcstrings */; };
 		DCFAD2AF2CC58B5000BFC8E2 /* Extra.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DCFAD2AE2CC58B5000BFC8E2 /* Extra.xcstrings */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,8 @@
 		DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextForOnboardingPage.swift; sourceTree = "<group>"; };
+		DCF5FF5D2CFA758600441FA4 /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
+		DCF5FF5F2CFA79B300441FA4 /* DataProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProgressView.swift; sourceTree = "<group>"; };
 		DCFAD29A2CC54AD700BFC8E2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		DCFAD2AE2CC58B5000BFC8E2 /* Extra.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Extra.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,16 +62,10 @@
 			isa = PBXGroup;
 			children = (
 				DC0662C02C4BC2A300BCD53A /* SplashScreen.swift */,
+				DCF5FF5D2CFA758600441FA4 /* VersionView.swift */,
+				DCF5FF5F2CFA79B300441FA4 /* DataProgressView.swift */,
 			);
 			path = SplashScreen;
-			sourceTree = "<group>";
-		};
-		DC0662C72C4BF07800BCD53A /* HomeView */ = {
-			isa = PBXGroup;
-			children = (
-				DC7CF6332C49C28100EDE5BE /* ContentView.swift */,
-			);
-			path = HomeView;
 			sourceTree = "<group>";
 		};
 		DC0C2B2A2C4FB9C300933EBE /* MainScreen */ = {
@@ -102,6 +100,7 @@
 				DC8DCE6D2C4AD69A00BC1136 /* Utilities */,
 				DC8DCE672C4AD30400BC1136 /* Views */,
 				DC7CF6312C49C28100EDE5BE /* InMindApp.swift */,
+				DC7CF6332C49C28100EDE5BE /* ContentView.swift */,
 				DC7CF6352C49C28300EDE5BE /* Assets.xcassets */,
 				DC7CF6372C49C28300EDE5BE /* Preview Content */,
 				DC0662C22C4BE7D400BCD53A /* Passwords.xcdatamodeld */,
@@ -123,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				DC0C2B2A2C4FB9C300933EBE /* MainScreen */,
-				DC0662C72C4BF07800BCD53A /* HomeView */,
 				DC0662BF2C4BC28C00BCD53A /* SplashScreen */,
 				DC8DCE6A2C4AD58500BC1136 /* Onboarding */,
 			);
@@ -222,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0662C12C4BC2A300BCD53A /* SplashScreen.swift in Sources */,
+				DCF5FF5E2CFA758600441FA4 /* VersionView.swift in Sources */,
 				DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */,
 				DC0F88702C53E403005C6AF4 /* PasswordList.swift in Sources */,
 				DC0662C42C4BE7D400BCD53A /* Passwords.xcdatamodeld in Sources */,
@@ -232,6 +231,7 @@
 				DC0C2B2C2C4FB9D600933EBE /* MainScreen.swift in Sources */,
 				DC8DCE6F2C4AD6BE00BC1136 /* TextForOnboardingPage.swift in Sources */,
 				DC8DCE6C2C4AD5A000BC1136 /* OnboardingPage.swift in Sources */,
+				DCF5FF602CFA79B300441FA4 /* DataProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
