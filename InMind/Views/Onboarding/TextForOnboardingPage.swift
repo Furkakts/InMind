@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 class TextForOnboardingPage {
-    static let textOfPage:[LocalizedStringKey] =
+    private static let textOfPage:[LocalizedStringKey] =
     ["We use passwords everyday on every corner of our lifes.Not to forget a password,some takes note,some memorizes.In order to save you from this difficulty, I offer you a remedy, InMind.",
      
     "You can store passwords of social media accounts or credit cards in this app.Then you can reach them easily whenever you need without memorizing.",

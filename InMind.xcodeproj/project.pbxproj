@@ -13,13 +13,13 @@
 		DC0C2B2C2C4FB9D600933EBE /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */; };
 		DC0F88702C53E403005C6AF4 /* PasswordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F886F2C53E403005C6AF4 /* PasswordList.swift */; };
 		DC22299D2C5282E0001FB25B /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22299C2C5282E0001FB25B /* AddPasswordView.swift */; };
+		DC74C44E2CFB1DAD00891BF2 /* OnboardingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C44D2CFB1DAD00891BF2 /* OnboardingContent.swift */; };
 		DC7CF6322C49C28100EDE5BE /* InMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6312C49C28100EDE5BE /* InMindApp.swift */; };
 		DC7CF6342C49C28100EDE5BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6332C49C28100EDE5BE /* ContentView.swift */; };
 		DC7CF6362C49C28300EDE5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7CF6352C49C28300EDE5BE /* Assets.xcassets */; };
 		DC7CF6392C49C28300EDE5BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7CF6382C49C28300EDE5BE /* Preview Assets.xcassets */; };
 		DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */; };
 		DC8DCE6C2C4AD5A000BC1136 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */; };
-		DC8DCE6F2C4AD6BE00BC1136 /* TextForOnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */; };
 		DCF5FF5E2CFA758600441FA4 /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF5FF5D2CFA758600441FA4 /* VersionView.swift */; };
 		DCF5FF602CFA79B300441FA4 /* DataProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF5FF5F2CFA79B300441FA4 /* DataProgressView.swift */; };
 		DCFAD29B2CC54AD700BFC8E2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DCFAD29A2CC54AD700BFC8E2 /* Localizable.xcstrings */; };
@@ -33,6 +33,7 @@
 		DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		DC0F886F2C53E403005C6AF4 /* PasswordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordList.swift; sourceTree = "<group>"; };
 		DC22299C2C5282E0001FB25B /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
+		DC74C44D2CFB1DAD00891BF2 /* OnboardingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContent.swift; sourceTree = "<group>"; };
 		DC7CF62E2C49C28100EDE5BE /* InMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7CF6312C49C28100EDE5BE /* InMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMindApp.swift; sourceTree = "<group>"; };
 		DC7CF6332C49C28100EDE5BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		DC7CF6382C49C28300EDE5BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
-		DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextForOnboardingPage.swift; sourceTree = "<group>"; };
 		DCF5FF5D2CFA758600441FA4 /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
 		DCF5FF5F2CFA79B300441FA4 /* DataProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProgressView.swift; sourceTree = "<group>"; };
 		DCFAD29A2CC54AD700BFC8E2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -133,6 +133,7 @@
 			children = (
 				DC8DCE652C4AD2FD00BC1136 /* OnboardingView.swift */,
 				DC8DCE6B2C4AD5A000BC1136 /* OnboardingPage.swift */,
+				DC74C44D2CFB1DAD00891BF2 /* OnboardingContent.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -140,7 +141,6 @@
 		DC8DCE6D2C4AD69A00BC1136 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				DC8DCE6E2C4AD6BE00BC1136 /* TextForOnboardingPage.swift */,
 				DC0662C52C4BE81B00BCD53A /* CoreData.swift */,
 			);
 			path = Utilities;
@@ -219,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC74C44E2CFB1DAD00891BF2 /* OnboardingContent.swift in Sources */,
 				DC0662C12C4BC2A300BCD53A /* SplashScreen.swift in Sources */,
 				DCF5FF5E2CFA758600441FA4 /* VersionView.swift in Sources */,
 				DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */,
@@ -229,7 +230,6 @@
 				DC22299D2C5282E0001FB25B /* AddPasswordView.swift in Sources */,
 				DC7CF6322C49C28100EDE5BE /* InMindApp.swift in Sources */,
 				DC0C2B2C2C4FB9D600933EBE /* MainScreen.swift in Sources */,
-				DC8DCE6F2C4AD6BE00BC1136 /* TextForOnboardingPage.swift in Sources */,
 				DC8DCE6C2C4AD5A000BC1136 /* OnboardingPage.swift in Sources */,
 				DCF5FF602CFA79B300441FA4 /* DataProgressView.swift in Sources */,
 			);

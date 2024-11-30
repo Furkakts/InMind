@@ -4,7 +4,7 @@ struct ContentView: View {
     @StateObject private var coredataModel = CoreData()
     
     var body: some View {
-        if coredataModel.isLoadingCompleted {
+        if !coredataModel.isLoadingCompleted {
             SplashScreen(cdModel:coredataModel) }
         
         else {
