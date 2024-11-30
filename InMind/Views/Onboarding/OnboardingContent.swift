@@ -4,15 +4,15 @@ import SwiftUI
 
 struct OnboardingContent {
     static let titles: [LocalizedStringKey] =
-        ["Welcome to InMind!", "Store passwords securely." ,
-         "Access passwords without effort.", "Feedbacks are as vital as passwords."]
+        ["Welcome to InMind!", "Store passwords" ,
+         "Access passwords without effort", "Feedbacks are as vital as passwords."]
     
     static let descriptions: [LocalizedStringKey] =
-        ["We use passwords everyday on every corner of our lifes.Not to forget a password,some takes note,some memorizes.In order to save you from this difficulty, I offer you a remedy, InMind.",
+        ["Passwords are used everyday and everywhere. Someone memorizes these passwords, others take note of these passwords not to forget. In order to save you from this, I offer you a remedy, InMind.",
      
-         "You can store passwords of social media accounts or credit cards in this app.Then you can reach them easily whenever you need without memorizing.",
+         "You can store passwords of social media accounts, credit cards or other accounts in this app. Then you get them whenever you need without memorizing.",
      
-         "You can list all your passwords and find one that you search for with ease.You can hide your passwords or copy them directly into other applications.",
+         "You can list your passwords and find the one that you search for and copy that password with single click.",
      
-         "Please feed us with your feedbacks.Don't hide them from us.They are not supposed to be as secret as your passwords."]
+         "Feed us with your feedbacks. They are not supposed to be as secret as your passwords."]
 }

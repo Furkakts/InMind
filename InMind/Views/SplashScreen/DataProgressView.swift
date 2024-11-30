@@ -15,7 +15,7 @@ struct DataProgressView: View {
     }
     
     var errorView: some View {
-        Text("An unknown error occurred. Try again later !")
+        Text("Error occurred. Try again!")
             .frame(maxWidth: .infinity)
             .frame(height: 30)
             .font(.system(.subheadline, design: .rounded, weight: .medium))

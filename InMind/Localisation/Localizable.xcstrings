@@ -15,12 +15,12 @@
       },
       "shouldTranslate" : false
     },
-    "Access passwords without effort." : {
+    "Access passwords without effort" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zorlanmadan şifrelerine ulaş."
+            "value" : "Şifrelere kolayca erişim"
           }
         }
       }
@@ -31,16 +31,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ekle"
-          }
-        }
-      }
-    },
-    "An unknown error occurred. Try again later !" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hata oluştu. Sonra tekrar deneyin ! "
           }
         }
       }
@@ -74,6 +64,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Girdiğin kullanıcı adı veya email  geçersiz yada zaten listende var. Lütfen kontrol edip tekrar deneyin!"
+          }
+        }
+      }
+    },
+    "Error occurred. Try again!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hata oluştu. Tekrar dene! "
+          }
+        }
+      }
+    },
+    "Feed us with your feedbacks. They are not supposed to be as secret as your passwords." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bize geri dönüşlerinle yardımcı ol.  Geri dönüşlerinin şifrelerin kadar gizli olmasına gerekmiyor."
           }
         }
       }
@@ -148,12 +158,12 @@
         }
       }
     },
-    "Please feed us with your feedbacks.Don't hide them from us.They are not supposed to be as secret as your passwords." : {
+    "Passwords are used everyday and everywhere. Someone memorizes these passwords, others take note of these passwords not to forget. In order to save you from this, I offer you a remedy, InMind." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lütfen bizi geri dönüşlerinizle besleyin. Onları bizden saklamayın. Geri dönüşleriniz şifreleriniz kadar gizli olmamalı."
+            "value" : "Şifreler her gün her yerde kullanılıyor.  Bazıları ezberliyor, diğerleri unutmamak için bu şifreleri not ediyor.  InMind seni bu dertten kurtaracak."
           }
         }
       }
@@ -188,12 +198,12 @@
         }
       }
     },
-    "Store passwords securely." : {
+    "Store passwords" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Şifrelerini güvenle kaydet."
+            "value" : "Şifreleri sakla"
           }
         }
       }
@@ -218,16 +228,6 @@
         }
       }
     },
-    "We use passwords everyday on every corner of our lifes.Not to forget a password,some takes note,some memorizes.In order to save you from this difficulty, I offer you a remedy, InMind." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hayatımızın her yerinde şifreleri kullanıyoruz. Bazılarımız unutmamak için not alıyor, bazılarıysa ezberlemeyi tercih ediyor. Sizi bu dertten kurtarmanın tek yolu InMind."
-          }
-        }
-      }
-    },
     "Welcome to InMind!" : {
       "localizations" : {
         "tr" : {
@@ -248,22 +248,22 @@
         }
       }
     },
-    "You can list all your passwords and find one that you search for with ease.You can hide your passwords or copy them directly into other applications." : {
+    "You can list your passwords and find the one that you search for and copy that password with single click." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bütün şifrelerinize rahatlıkla ulaşabilir, aradığınıza kolaylıkla erişebilirsiniz. Şifrelerinizi diğerlerinden gizleyebilir ve tek tıkla kopyalayarak istediğiniz yerde kullanabilirsiniz."
+            "value" : "Şifrelerini rahatlıkla görebilir aradığını kolaylıkla bulabilirsin. Gerektiğinde de tek tıkla şifreyi kopyalayıp istediğin yerde kullanabilirsin."
           }
         }
       }
     },
-    "You can store passwords of social media accounts or credit cards in this app.Then you can reach them easily whenever you need without memorizing." : {
+    "You can store passwords of social media accounts, credit cards or other accounts in this app. Then you get them whenever you need without memorizing." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uygulamada sosyal medya hesaplarınızın yada kredi kartlarınızın şifrelerini saklayabilir ve ihtiyacınız olduğunda ezberlemeye gerek kalmadan kullanabilirsiniz."
+            "value" : "Uygulamada sosyal medya hesaplarının, kredi kartlarının veya diğer hesapların şifrelerini saklayabilir, gerektiğinde ezberlemeye gerek kalmadan kullanabilirsin."
           }
         }
       }
