@@ -78,6 +78,15 @@
 			path = MainScreen;
 			sourceTree = "<group>";
 		};
+		DC1E61D12CFB8D7F002B37D1 /* Localisation */ = {
+			isa = PBXGroup;
+			children = (
+				DCFAD2AE2CC58B5000BFC8E2 /* Extra.xcstrings */,
+				DCFAD29A2CC54AD700BFC8E2 /* Localizable.xcstrings */,
+			);
+			path = Localisation;
+			sourceTree = "<group>";
+		};
 		DC7CF6252C49C28100EDE5BE = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +113,7 @@
 				DC7CF6352C49C28300EDE5BE /* Assets.xcassets */,
 				DC7CF6372C49C28300EDE5BE /* Preview Content */,
 				DC0662C22C4BE7D400BCD53A /* Passwords.xcdatamodeld */,
-				DCFAD29A2CC54AD700BFC8E2 /* Localizable.xcstrings */,
-				DCFAD2AE2CC58B5000BFC8E2 /* Extra.xcstrings */,
+				DC1E61D12CFB8D7F002B37D1 /* Localisation */,
 			);
 			path = InMind;
 			sourceTree = "<group>";

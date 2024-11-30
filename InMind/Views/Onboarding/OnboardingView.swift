@@ -1,34 +1,24 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @State private var pageNumberInOnboardingView = 1
-    
-      // Takes data from file and fills title and text arrays below
-    private let pageTitle:[LocalizedStringKey] = TextForOnboardingPage.titleOfPage
-    private var titleForEachOnboardingPage:LocalizedStringKey {
-        pageTitle[pageNumberInOnboardingView-1]
-    }
-    
-    private let pageText:[LocalizedStringKey] = TextForOnboardingPage.textOfPage
-    private var textForEachOnboardingPage:LocalizedStringKey {
-        pageText[pageNumberInOnboardingView-1]
+    private let onboardingPage: Int = OnboardingContent.titles.count
+    init() {
+        UIPageControl.appearance().currentPageIndicatorTintColor
+                         = UIColor(named: "MainColor")
+        UIPageControl.appearance().pageIndicatorTintColor
+                         = UIColor(named: "MainColor")?.withAlphaComponent(0.4)
     }
     
     var body: some View {
-        
-        switch pageNumberInOnboardingView {  // Visit over onboarding view pages
-           case 1:
-              OnboardingPage(pageNumber: $pageNumberInOnboardingView, title: titleForEachOnboardingPage, text: textForEachOnboardingPage, numberOfPages: pageText.count)
-           case 2:
-              OnboardingPage(pageNumber: $pageNumberInOnboardingView, title: titleForEachOnboardingPage, text: textForEachOnboardingPage, numberOfPages: pageText.count)
-           case 3:
-              OnboardingPage(pageNumber: $pageNumberInOnboardingView, title: titleForEachOnboardingPage, text: textForEachOnboardingPage, numberOfPages: pageText.count)
-           case 4:
-              OnboardingPage(pageNumber: $pageNumberInOnboardingView, title: titleForEachOnboardingPage, text: textForEachOnboardingPage, numberOfPages: pageText.count)
-           default:
-              EmptyView()
+        TabView {
+            ForEach(0..<onboardingPage, id:\.self){ page in
+                OnboardingPage(page: page)
+            }
         }
-    }
+        .tabViewStyle(.page)
+        .tabViewStyle(.page(indexDisplayMode: .always))
+        .background(Color("SideColor"))
+    } 
 }
     
 struct OnboardingView_Previews: PreviewProvider {

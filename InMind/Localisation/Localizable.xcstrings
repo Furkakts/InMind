@@ -45,15 +45,8 @@
         }
       }
     },
-    "Back" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geri"
-          }
-        }
-      }
+    "CHANGE" : {
+      "shouldTranslate" : false
     },
     "Comment" : {
       "localizations" : {
@@ -95,12 +88,12 @@
         }
       }
     },
-    "Finish" : {
+    "FINISH" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sonlandır"
+            "value" : "SONLANDIR"
           }
         }
       }
@@ -111,16 +104,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "InMind"
-          }
-        }
-      }
-    },
-    "Next" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İleri"
           }
         }
       }
@@ -250,7 +233,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "InMind Hoşgeldin!"
+            "value" : "InMind’a Hoşgeldin!"
           }
         }
       }

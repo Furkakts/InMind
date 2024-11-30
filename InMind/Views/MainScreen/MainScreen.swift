@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MainScreen: View {
     @StateObject var coreDataModel: CoreData
-
+    @AppStorage("isNewUser") private var isNewUser = true
     var body: some View {
         TabView {
             firstTabItem()
@@ -14,6 +14,10 @@ struct MainScreen: View {
                 .tabItem {
                     Label("Add", systemImage: "plus.app.fill")
                 }
+        }
+        .sheet(isPresented: $isNewUser){
+            OnboardingView()
+                .presentationDetents([.fraction(0.3)])
         }
         .tint(Color("MainColor"))
         .onAppear {
@@ -33,11 +37,15 @@ struct MainScreen: View {
     
     var contentUnavailable: some View {
         VStack(spacing: 30) {
+            
+            
             Image(systemName: "note.text.badge.plus")
                 .resizable()
                 .frame(width: 60, height: 60)
                 .foregroundStyle(Color("SideColor"))
-
+            Button("CHANGE"){
+                isNewUser.toggle()
+            }.background(Color("SideColor"))
             Text("There is nothing to show now. You can see your passwords and related information here if you add password.")
                 .font(.subheadline)
                 .fontWeight(.medium)

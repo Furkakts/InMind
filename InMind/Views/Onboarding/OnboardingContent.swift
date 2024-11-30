@@ -3,11 +3,11 @@ import Foundation
 import SwiftUI
 
 struct OnboardingContent {
-    private static let titleOfPage: [LocalizedStringKey] =
+    static let titles: [LocalizedStringKey] =
         ["Welcome to InMind!", "Store passwords securely." ,
          "Access passwords without effort.", "Feedbacks are as vital as passwords."]
     
-    private static let textOfPage: [LocalizedStringKey] =
+    static let descriptions: [LocalizedStringKey] =
         ["We use passwords everyday on every corner of our lifes.Not to forget a password,some takes note,some memorizes.In order to save you from this difficulty, I offer you a remedy, InMind.",
      
          "You can store passwords of social media accounts or credit cards in this app.Then you can reach them easily whenever you need without memorizing.",
