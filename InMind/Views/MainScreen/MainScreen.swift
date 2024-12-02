@@ -17,7 +17,7 @@ struct MainScreen: View {
         }
         .sheet(isPresented: $isNewUser){
             OnboardingView()
-                .presentationDetents([.fraction(0.25)])
+                .presentationDetents([.fraction(0.26)])
                 .interactiveDismissDisabled()
                 .presentationDragIndicator(.hidden)
         }
@@ -31,33 +31,12 @@ struct MainScreen: View {
         return ZStack {
                   Color("MainColor").ignoresSafeArea(edges: .top)
                   Group {
-                      if coreDataModel.passwords.isEmpty { contentUnavailable }
+                      if coreDataModel.passwords.isEmpty { ContentUnavailableView() }
                       else { PasswordList(coreDataModel: coreDataModel) }
                   }
                }
     }
     
-    var contentUnavailable: some View {
-        VStack(spacing: 30) {
-            
-            
-            Image(systemName: "note.text.badge.plus")
-                .resizable()
-                .frame(width: 60, height: 60)
-                .foregroundStyle(Color("SideColor"))
-            Button("CHANGE"){
-                isNewUser.toggle()
-            }.background(Color("SideColor"))
-            Text("There is nothing to show now. You can see your passwords and related information here if you add password.")
-                .font(.subheadline)
-                .fontWeight(.medium)
-                .foregroundStyle(Color("SideColor"))
-                .kerning(1.0)
-                .multilineTextAlignment(.center)
-        }
-        .padding()
-        .frame(width: 300, height: 300)
-    }
 }
 
 struct MainScreen_Previews: PreviewProvider {

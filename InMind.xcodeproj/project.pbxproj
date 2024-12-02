@@ -13,6 +13,7 @@
 		DC0C2B2C2C4FB9D600933EBE /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */; };
 		DC0F88702C53E403005C6AF4 /* PasswordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F886F2C53E403005C6AF4 /* PasswordList.swift */; };
 		DC22299D2C5282E0001FB25B /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22299C2C5282E0001FB25B /* AddPasswordView.swift */; };
+		DC690A112CFE6599007E9968 /* ContentUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC690A102CFE6599007E9968 /* ContentUnavailableView.swift */; };
 		DC74C44E2CFB1DAD00891BF2 /* OnboardingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C44D2CFB1DAD00891BF2 /* OnboardingContent.swift */; };
 		DC7CF6322C49C28100EDE5BE /* InMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6312C49C28100EDE5BE /* InMindApp.swift */; };
 		DC7CF6342C49C28100EDE5BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CF6332C49C28100EDE5BE /* ContentView.swift */; };
@@ -33,6 +34,7 @@
 		DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		DC0F886F2C53E403005C6AF4 /* PasswordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordList.swift; sourceTree = "<group>"; };
 		DC22299C2C5282E0001FB25B /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
+		DC690A102CFE6599007E9968 /* ContentUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUnavailableView.swift; sourceTree = "<group>"; };
 		DC74C44D2CFB1DAD00891BF2 /* OnboardingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContent.swift; sourceTree = "<group>"; };
 		DC7CF62E2C49C28100EDE5BE /* InMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7CF6312C49C28100EDE5BE /* InMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMindApp.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				DC0C2B2B2C4FB9D600933EBE /* MainScreen.swift */,
 				DC0F886F2C53E403005C6AF4 /* PasswordList.swift */,
 				DC22299C2C5282E0001FB25B /* AddPasswordView.swift */,
+				DC690A102CFE6599007E9968 /* ContentUnavailableView.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				DC74C44E2CFB1DAD00891BF2 /* OnboardingContent.swift in Sources */,
 				DC0662C12C4BC2A300BCD53A /* SplashScreen.swift in Sources */,
 				DCF5FF5E2CFA758600441FA4 /* VersionView.swift in Sources */,
+				DC690A112CFE6599007E9968 /* ContentUnavailableView.swift in Sources */,
 				DC8DCE662C4AD2FD00BC1136 /* OnboardingView.swift in Sources */,
 				DC0F88702C53E403005C6AF4 /* PasswordList.swift in Sources */,
 				DC0662C42C4BE7D400BCD53A /* Passwords.xcdatamodeld in Sources */,
