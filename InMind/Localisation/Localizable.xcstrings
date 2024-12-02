@@ -20,7 +20,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Şifrelere kolayca erişim"
+            "value" : "Şifrelerine kolayca ulaş"
           }
         }
       }
@@ -83,7 +83,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bize geri dönüşlerinle yardımcı ol.  Geri dönüşlerinin şifrelerin kadar gizli olmasına gerekmiyor."
+            "value" : "Bize geri dönüşlerinle yardımcı ol. Geri dönüşlerin şifrelerin kadar gizli olmasın."
           }
         }
       }
@@ -93,7 +93,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Geri dönüşlerinizde şifreleriniz kadar önemli."
+            "value" : "Geri dönüşlerinde şifrelerin kadar önemli"
           }
         }
       }
@@ -163,7 +163,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Şifreler her gün her yerde kullanılıyor.  Bazıları ezberliyor, diğerleri unutmamak için bu şifreleri not ediyor.  InMind seni bu dertten kurtaracak."
+            "value" : "Şifreleri her gün her yerde kullanıyoruz. Bazı insanlar bunları ezberliyor, diğerleri unutmamak kağıtlara not ediyor. InMind seni bu dertten kurtaracak."
           }
         }
       }
@@ -203,7 +203,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Şifreleri sakla"
+            "value" : "Şifrelerini sakla"
           }
         }
       }
@@ -213,7 +213,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gösterilecek bişey yok. Eğer şifre bilgilerinizi eklerseniz, bilgilerinizi burada görebilirsiniz."
+            "value" : "Gösterilecek bir şey bulunamadı. Yeni bir şifre eklediğinde onu buradan görebilirsiniz."
           }
         }
       }
@@ -253,7 +253,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Şifrelerini rahatlıkla görebilir aradığını kolaylıkla bulabilirsin. Gerektiğinde de tek tıkla şifreyi kopyalayıp istediğin yerde kullanabilirsin."
+            "value" : "Bütün şifrelerini rahatlıkla görebilir, aradığını kolaylıkla bulabilirsin. Gerektiğinde de tek tıkla şifreni kopyalayıp istediğin yerde kullanabilirsin."
           }
         }
       }
@@ -263,7 +263,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uygulamada sosyal medya hesaplarının, kredi kartlarının veya diğer hesapların şifrelerini saklayabilir, gerektiğinde ezberlemeye gerek kalmadan kullanabilirsin."
+            "value" : "Bu uygulamada sosyal medya hesapları, kredi kartları veya diğer hesapların şifrelerini saklayabilir, gerektiğinde ezberlemeye gerek kalmadan kullanabilirsin."
           }
         }
       }

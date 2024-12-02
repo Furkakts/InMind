@@ -17,7 +17,7 @@ struct MainScreen: View {
         }
         .sheet(isPresented: $isNewUser){
             OnboardingView()
-                .presentationDetents([.fraction(0.28)])
+                .presentationDetents([.fraction(0.25)])
                 .interactiveDismissDisabled()
                 .presentationDragIndicator(.hidden)
         }
