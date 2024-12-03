@@ -48,6 +48,16 @@
         }
       }
     },
+    "DELETE" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SİL"
+          }
+        }
+      }
+    },
     "E-mail / Username" : {
       "localizations" : {
         "tr" : {

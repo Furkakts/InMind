@@ -4,44 +4,42 @@ struct PasswordList: View {
     @StateObject var coreDataModel:CoreData
     
     var body: some View {
-        VStack(alignment:.leading, spacing: 10){
+        VStack(spacing: 0){
             Text("Passwords")
-                .padding(.leading, 40)
-                .padding(.vertical, 10)
-                .font(.title2)
-                .fontWeight(.bold)
+                .padding(.vertical, 20)
+                .font(.system(.title, design: .rounded, weight: .bold))
                 .foregroundStyle(Color("SideColor"))
             
             ScrollView(.vertical, showsIndicators: false) {
-                ForEach(coreDataModel.passwords) { password in
-                    VStack(spacing: 20) {
-                        HStack{
-                            VStack(alignment:.leading, spacing: 10){
-                                usernamePasswordSection(passwordData: password.name ?? "NaN", text: "Username:")
-                                usernamePasswordSection(passwordData: password.password ?? "NaN", text: "Password:")
-                            }
-                            Spacer()
-                            Button {
+                VStack(spacing: 20) {
+                    ForEach(coreDataModel.passwords) { password in
+                        VStack(alignment: .leading, spacing: 10) {
+                            usernamePasswordSection(passwordData: password.name ?? "NaN", text: "Username:")
+                            usernamePasswordSection(passwordData: password.password ?? "NaN", text: "Password:")
+                            commentSection(passwordData: password.comment ?? "NaN", text: "Comment")
+                            
+                            HStack{
+                                Spacer()
+                                Button {
                                     coreDataModel.deletePassword(deletedPassword: password)
-                            } label: {
-                                 deleteButton
-                            } .padding(.trailing, 35)
+                                }label: {
+                                    Text("DELETE")
+                                        .padding(.horizontal, 20)
+                                        .padding(.vertical, 8)
+                                        .font(.system(.subheadline, design: .rounded, weight: .medium))
+                                        .foregroundStyle(Color("SideColor"))
+                                        .background(Color("MainColor"), in: Capsule())
+                                } .padding(.trailing, 20)
+                            }
                         }
-                        commentSection(passwordData: password.comment ?? "NaN", text: "Comment")
+                        .padding()
+                        .background(Color("SideColor"))
+                        .cornerRadius(30)
+                        .shadow(radius: 2, y:5)
                     }
-                    .padding(.vertical, 20)
-                    .background(Color("SideColor"), in: RoundedRectangle(cornerRadius: 5))
                 }
-            }
-            .padding(5)
+            }.padding(.horizontal, 5)
         }
-    }
-    
-    var deleteButton: some View {
-        Image(systemName:"trash.circle")
-            .resizable()
-            .frame(width: 30, height: 30)
-            .foregroundStyle(Color("MainColor"))
     }
     
     func usernamePasswordSection(passwordData: String, text:LocalizedStringKey) -> some View {
