@@ -5,9 +5,8 @@ struct AddPasswordView: View {
     @State private var username = ""
     @State private var password = ""
     @State private var comment = ""
-    @State private var alertMessage: LocalizedStringKey = ""
+    @State private var confirmationMessage: LocalizedStringKey = ""
     @State private var isErrorOccurred = false
-    @State private var isLoadingActivated = false
     @State private var isSaved = false
     @FocusState private var isFocused
     
@@ -17,15 +16,15 @@ struct AddPasswordView: View {
             
             VStack(spacing: 15){
                 appName
+                Text(confirmationMessage)
+                    .font(.system(.caption, design: .rounded, weight: .medium))
+                    .foregroundStyle(isErrorOccurred || !isSaved ? .red : .green)
+                    .multilineTextAlignment(.center)
                     .padding(.bottom, 20)
-                
-                Text(alertMessage)
-                    .font(.system(.caption, design: .rounded, weight: .regular))
-                    .foregroundStyle(isErrorOccurred ? .red : .green)
                 
                 textField(fieldText: $username, text:"E-mail / Username")
                 textField(fieldText: $password, text: LocalizedStringResource("Password", table: "Extra"))
-                textEditor(editorText: $comment, text: "Comment")
+                textEditor(editorText: $comment, text: "Note")
                 
                 HStack(spacing: 30){
                     resetButton
@@ -55,7 +54,7 @@ struct AddPasswordView: View {
                 .foregroundStyle(Color("MainColor"))
                 
             TextField("", text: fieldText, prompt: prompt(text: text))
-                .padding(.vertical, 5)
+                .padding(.vertical, 8)
                 .foregroundStyle(Color("SideColor"))
                 .background(Color("MainColor"))
                 .cornerRadius(2)
@@ -93,13 +92,13 @@ struct AddPasswordView: View {
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 .overlay {
-                    if comment.isEmpty { commentPlaceholder }
+                  // if comment.isEmpty { commentPlaceholder }
                 }
         }
     }
     
     var commentPlaceholder: some View {
-        Text("Write notes here!")
+        Text("Write note here!")
             .font(.system(.caption, design: .rounded, weight: .regular))
             .foregroundStyle(Color("SideColor"))
             .opacity(0.7)
@@ -121,46 +120,18 @@ struct AddPasswordView: View {
     
     var saveButton: some View {
         Button {
-            isLoadingActivated = true
-            
-            if isFieldEmpty(username: username, password: password) || checkAvailability(username:username) {
-                isLoadingActivated = false
+            if isFieldEmpty() || isAvailable() {
                 isErrorOccurred = true
-            } else {
-                if comment.isEmpty { comment = "NaN" }
-                let indentedComment = "         " + comment
-                coreDataModel.addPassword(username:username, password:password, comment: indentedComment)
                 
-                isLoadingActivated = false
-                isSaved = true
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.75){
-                    isSaved = false
-                    isFocused = false
-                    reset()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                    isErrorOccurred = false
+                    confirmationMessage = " "
                 }
-             
+            } else {
+                save()
             }
         } label: {
-            ZStack{
-                buttonText(text: "Save")
-                if !isLoadingActivated {
-                    ProgressView()
-                        .controlSize(.large)
-                        .tint(Color("SideColor"))
-                }
-                if isSaved {
-                    Text("Saved")
-                        .padding(10)
-                        .font(.caption)
-                        .fontWeight(.medium)
-                        .foregroundStyle(Color("MainColor"))
-                        .background(Color("SideColor"), in: RoundedRectangle(cornerRadius: 8))
-                }
-            }
-        }
-        .overlay(alignment:.topTrailing){
-           
+           buttonText(text: "Save")
         }
     }
    
@@ -172,21 +143,43 @@ struct AddPasswordView: View {
             .background(Color("MainColor"), in: Capsule())
     }
     
-    func isFieldEmpty(username:String, password:String) -> Bool{
+    func isFieldEmpty() -> Bool{
         if username.isEmpty || password.isEmpty {
-            alertMessage = "You can't leave fields empty.Please fill them."
+            confirmationMessage = "You can't leave username or password empty. Please fill them."
             return true
         }
         return false
     }
     
-    func checkAvailability(username:String) -> Bool{
+    func isAvailable() -> Bool{
         let result = coreDataModel.passwords.map { password in password.name }.contains(username)
         if result {
-            alertMessage = "Entry for username or e-mail is invalid or already in your list.Please Try again!"
-             return true
+            confirmationMessage = "Username/E-mail is already in your list."
+            return true
        }
         return false
+    }
+    
+    func save() {
+        var defaultComment = ""
+        
+        if comment.isEmpty {
+            defaultComment = "There is no note."
+        } else {
+            defaultComment = comment
+        }
+        
+        coreDataModel.addPassword(username:username, password:password, comment: defaultComment)
+        
+        confirmationMessage = "Saved Successfully."
+        isSaved = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            isSaved = false
+            confirmationMessage = ""
+            isFocused = false
+            reset()
+        }
     }
 }
 

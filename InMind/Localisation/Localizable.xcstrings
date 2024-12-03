@@ -4,6 +4,9 @@
     "" : {
       "shouldTranslate" : false
     },
+    " " : {
+      "shouldTranslate" : false
+    },
     "%@.%@" : {
       "localizations" : {
         "en" : {
@@ -51,16 +54,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mail / Kullanıcı Adı"
-          }
-        }
-      }
-    },
-    "Entry for username or e-mail is invalid or already in your list.Please Try again!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Girdiğin kullanıcı adı veya email  geçersiz yada zaten listende var. Lütfen kontrol edip tekrar deneyin!"
           }
         }
       }
@@ -115,12 +108,12 @@
         }
       }
     },
-    "OK" : {
+    "Note" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tamam"
+            "value" : "Not"
           }
         }
       }
@@ -185,12 +178,12 @@
         }
       }
     },
-    "Saved" : {
+    "Saved Successfully." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kaydedildi"
+            "value" : "Başarılı şekilde kaydedildi."
           }
         }
       }
@@ -226,6 +219,16 @@
         }
       }
     },
+    "Username/E-mail is already in your list." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Girdiğin Kullanıcı Adı/Email daha önce eklendi."
+          }
+        }
+      }
+    },
     "Welcome to InMind!" : {
       "localizations" : {
         "tr" : {
@@ -236,7 +239,7 @@
         }
       }
     },
-    "Write notes here!" : {
+    "Write note here!" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -266,7 +269,7 @@
         }
       }
     },
-    "You can't leave fields empty.Please fill them." : {
+    "You can't leave username or password empty. Please fill them." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
