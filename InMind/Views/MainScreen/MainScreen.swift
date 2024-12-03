@@ -3,6 +3,7 @@ import SwiftUI
 struct MainScreen: View {
     @StateObject var coreDataModel: CoreData
     @AppStorage("isNewUser") private var isNewUser = true
+    
     var body: some View {
         TabView {
             firstTabItem()
@@ -28,15 +29,17 @@ struct MainScreen: View {
     }
 
     func firstTabItem() -> some View {
-        return ZStack {
-                  Color("MainColor").ignoresSafeArea(edges: .top)
-                  Group {
-                      if coreDataModel.passwords.isEmpty { ContentUnavailableView() }
-                      else { PasswordList(coreDataModel: coreDataModel) }
-                  }
-               }
+        return
+            ZStack {
+                Color("MainColor").ignoresSafeArea(edges: .top)
+                Group {
+                    if coreDataModel.passwords.isEmpty {
+                        ContentUnavailableView() }
+                    else {
+                        PasswordList(coreDataModel: coreDataModel) }
+                }
+            }
     }
-    
 }
 
 struct MainScreen_Previews: PreviewProvider {
