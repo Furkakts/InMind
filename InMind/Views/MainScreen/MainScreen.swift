@@ -6,9 +6,9 @@ struct MainScreen: View {
     
     var body: some View {
         TabView {
-            firstTabItem()
+            setTabView()
                 .tabItem {
-                    Label("Password", systemImage: "list.bullet.rectangle.portrait.fill")
+                    Label("Password List", systemImage: "list.bullet.rectangle.portrait.fill")
                 }
 
             AddPasswordView(coreDataModel: coreDataModel)
@@ -16,29 +16,23 @@ struct MainScreen: View {
                     Label("Add", systemImage: "plus.app.fill")
                 }
         }
+        .tint(Color("MainColor"))
+        .onAppear { UITabBar.appearance().backgroundColor = UIColor(Color("SideColor")) }
         .sheet(isPresented: $isNewUser){
             OnboardingView()
                 .presentationDetents([.fraction(0.26)])
                 .interactiveDismissDisabled()
                 .presentationDragIndicator(.hidden)
         }
-        .tint(Color("MainColor"))
-        .onAppear {
-            UITabBar.appearance().backgroundColor = UIColor(Color("SideColor"))
-        }
     }
 
-    func firstTabItem() -> some View {
-        return
-            ZStack {
-                Color("MainColor").ignoresSafeArea(edges: .top)
-                Group {
-                    if coreDataModel.passwords.isEmpty {
-                        ContentUnavailableView() }
-                    else {
-                        PasswordList(coreDataModel: coreDataModel) }
-                }
-            }
+    func setTabView() -> some View {
+        Group {
+            if coreDataModel.passwords.isEmpty { ContentUnavailableView() }
+            else { PasswordList(coreDataModel: coreDataModel) }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("MainColor"))
     }
 }
 

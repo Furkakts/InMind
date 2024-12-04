@@ -125,7 +125,7 @@
         }
       }
     },
-    "Password" : {
+    "Password List" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -247,6 +247,7 @@
       }
     },
     "Write note here!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {

@@ -18,8 +18,7 @@ struct ContentUnavailableView: View {
                 .kerning(1.0)
                 .multilineTextAlignment(.center)
         }
-        .padding()
-        .frame(width: 300, height: 300)
+        .padding(.horizontal, 30)
     }
 }
 

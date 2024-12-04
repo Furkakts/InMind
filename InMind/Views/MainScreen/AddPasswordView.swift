@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AddPasswordView: View {
+    // MARK: Properties
     var coreDataModel:CoreData
     @State private var username = ""
     @State private var password = ""
@@ -8,7 +9,7 @@ struct AddPasswordView: View {
     @State private var confirmationMessage: LocalizedStringKey = ""
     @State private var isErrorOccurred = false
     @State private var isSaved = false
-    @FocusState private var isFocused
+    @FocusState private var isFocused: Bool
     
     var body: some View {
         ZStack {
@@ -40,7 +41,7 @@ struct AddPasswordView: View {
             }
         }
     }
-    
+    // MARK: Views
     var appName: some View {
         Text("InMind")
             .font(.system(.title, design: .rounded, weight: .bold))
@@ -61,6 +62,7 @@ struct AddPasswordView: View {
                 .multilineTextAlignment(.center)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
+                .tint(Color("SideColor"))
             Divider()
                 .frame(width:200)
                 .background(Color("MainColor"))
@@ -91,17 +93,8 @@ struct AddPasswordView: View {
                 .multilineTextAlignment(.leading)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
-                .overlay {
-                  // if comment.isEmpty { commentPlaceholder }
-                }
+                .tint(Color("SideColor"))
         }
-    }
-    
-    var commentPlaceholder: some View {
-        Text("Write note here!")
-            .font(.system(.caption, design: .rounded, weight: .regular))
-            .foregroundStyle(Color("SideColor"))
-            .opacity(0.7)
     }
     
     var resetButton: some View {
@@ -125,7 +118,7 @@ struct AddPasswordView: View {
             .foregroundStyle(Color("SideColor"))
             .background(Color("MainColor"), in: Capsule())
     }
-    
+    // MARK: Functions
     var saveButton: some View {
         Button {
             if isFieldEmpty() || isAvailable() {
@@ -165,7 +158,7 @@ struct AddPasswordView: View {
         var defaultComment = ""
         
         if comment.isEmpty { defaultComment = "There is no note." }
-        else { defaultComment = comment }
+        else { defaultComment = comment.trimmingCharacters(in: .whitespacesAndNewlines) }
         
         coreDataModel.addPassword(username:username, password:password, comment: defaultComment)
         
