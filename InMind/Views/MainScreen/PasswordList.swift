@@ -6,7 +6,7 @@ struct PasswordList: View {
     var body: some View {
         VStack(spacing: 0){
             Text("Passwords")
-                .padding(.vertical, 20)
+                .padding(.vertical, 10)
                 .font(.system(.title, design: .rounded, weight: .bold))
                 .foregroundStyle(Color("SideColor"))
             
@@ -16,21 +16,10 @@ struct PasswordList: View {
                         VStack(alignment: .leading, spacing: 10) {
                             usernamePasswordSection(passwordData: password.name ?? "NaN", text: "Username:")
                             usernamePasswordSection(passwordData: password.password ?? "NaN", text: "Password:")
-                            commentSection(passwordData: password.comment ?? "NaN", text: "Comment")
+                            commentSection(passwordData: password.comment ?? "NaN", text: "Note")
                             
-                            HStack{
-                                Spacer()
-                                Button {
-                                    coreDataModel.deletePassword(deletedPassword: password)
-                                }label: {
-                                    Text("DELETE")
-                                        .padding(.horizontal, 20)
-                                        .padding(.vertical, 8)
-                                        .font(.system(.subheadline, design: .rounded, weight: .medium))
-                                        .foregroundStyle(Color("SideColor"))
-                                        .background(Color("MainColor"), in: Capsule())
-                                } .padding(.trailing, 20)
-                            }
+                            PasswordCellButtonsView(coreData: coreDataModel, password: password)
+                                .padding(.horizontal, 10)
                         }
                         .padding()
                         .background(Color("SideColor"))
@@ -47,20 +36,14 @@ struct PasswordList: View {
             Text(text)
                 .padding(.leading, 20)
                 .font(.caption)
-                .fontWeight(.semibold)
+                .fontWeight(.regular)
                 .foregroundStyle(Color("MainColor"))
             Text(passwordData)
                 .font(.subheadline)
-                .fontWeight(.semibold)
+                .fontWeight(.medium)
                 .foregroundStyle(Color("MainColor"))
                 .minimumScaleFactor(0.5)
-            Image(systemName: "doc.on.doc")
-                .imageScale(.medium)
-                .padding(.leading, 10)
-                .foregroundStyle(Color("MainColor"))
-                .onTapGesture {
-                    copy(copiedText:passwordData)
-                }
+           
         }
     }
     
@@ -69,7 +52,7 @@ struct PasswordList: View {
             Text(text)
                 .padding(.bottom, 5)
                 .font(.caption)
-                .fontWeight(.semibold)
+                .fontWeight(.regular)
                 //.underline(true, color: Color("MainColor"))
                 .foregroundStyle(Color("MainColor"))
             Rectangle()
@@ -78,7 +61,7 @@ struct PasswordList: View {
                 .frame(height:1)
             Text(passwordData)
                 .font(.caption)
-                .fontWeight(.semibold)
+                .fontWeight(.medium)
                 .foregroundStyle(Color("MainColor"))
                 .minimumScaleFactor(0.5)
             Rectangle()
@@ -90,9 +73,7 @@ struct PasswordList: View {
         .frame(maxWidth:.infinity)
     }
 
-    func copy(copiedText: String) {
-        UIPasteboard.general.string = copiedText
-    }
+  
 }
 
 struct PasswordList_Previews: PreviewProvider {
