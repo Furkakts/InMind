@@ -4,9 +4,6 @@
     "" : {
       "shouldTranslate" : false
     },
-    " " : {
-      "shouldTranslate" : false
-    },
     "%@.%@" : {
       "localizations" : {
         "en" : {
@@ -38,30 +35,22 @@
         }
       }
     },
-    "Comment" : {
-      "extractionState" : "stale",
+    "Copy Password" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Not"
+            "value" : "Şifreyi Kopyala"
           }
         }
       }
     },
-    "Copy Password" : {
-
-    },
     "Delete" : {
-
-    },
-    "DELETE" : {
-      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SİL"
+            "value" : "Sil"
           }
         }
       }

@@ -125,7 +125,7 @@ struct AddPasswordView: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                     isErrorOccurred = false
-                    confirmationMessage = " "
+                    confirmationMessage = ""
                 }
             } else {
                 save()
