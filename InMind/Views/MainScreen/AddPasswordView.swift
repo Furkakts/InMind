@@ -118,23 +118,6 @@ struct AddPasswordView: View {
         comment = ""
     }
     
-    var saveButton: some View {
-        Button {
-            if isFieldEmpty() || isAvailable() {
-                isErrorOccurred = true
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                    isErrorOccurred = false
-                    confirmationMessage = ""
-                }
-            } else {
-                save()
-            }
-        } label: {
-           buttonText(text: "Save")
-        }
-    }
-   
     func buttonText(text:LocalizedStringKey) -> some View {
         Text(text)
             .padding(.horizontal, 30)
@@ -143,6 +126,15 @@ struct AddPasswordView: View {
             .background(Color("MainColor"), in: Capsule())
     }
     
+    var saveButton: some View {
+        Button {
+            if isFieldEmpty() || isAvailable() {
+                setWarning() }
+            else {
+                save() }
+        }label: { buttonText(text: "Save") }
+    }
+   
     func isFieldEmpty() -> Bool{
         if username.isEmpty || password.isEmpty {
             confirmationMessage = "You can't leave username or password empty. Please fill them."
@@ -160,20 +152,25 @@ struct AddPasswordView: View {
         return false
     }
     
+    func setWarning() {
+        isErrorOccurred = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            isErrorOccurred = false
+            confirmationMessage = ""
+        }
+    }
+    
     func save() {
         var defaultComment = ""
         
-        if comment.isEmpty {
-            defaultComment = "There is no note."
-        } else {
-            defaultComment = comment
-        }
+        if comment.isEmpty { defaultComment = "There is no note." }
+        else { defaultComment = comment }
         
         coreDataModel.addPassword(username:username, password:password, comment: defaultComment)
         
         confirmationMessage = "Saved Successfully."
         isSaved = true
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             isSaved = false
             confirmationMessage = ""
