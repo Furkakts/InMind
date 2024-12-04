@@ -9,7 +9,6 @@ struct AddPasswordView: View {
     @State private var confirmationMessage: LocalizedStringKey = ""
     @State private var isErrorOccurred = false
     @State private var isSaved = false
-    @FocusState private var isFocused: Bool
     
     var body: some View {
         ZStack {
@@ -86,7 +85,6 @@ struct AddPasswordView: View {
             TextEditor(text: editorText)
                 .frame(height: 65)
                 .scrollContentBackground(.hidden)
-                .focused($isFocused)
                 .foregroundStyle(Color("SideColor"))
                 .background(Color("MainColor"))
                 .cornerRadius(2)
@@ -167,7 +165,7 @@ struct AddPasswordView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             isSaved = false
             confirmationMessage = ""
-            isFocused = false
+           // isFocused = false
             reset()
         }
     }

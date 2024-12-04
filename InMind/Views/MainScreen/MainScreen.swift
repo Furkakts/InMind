@@ -17,7 +17,10 @@ struct MainScreen: View {
                 }
         }
         .tint(Color("MainColor"))
-        .onAppear { UITabBar.appearance().backgroundColor = UIColor(Color("SideColor")) }
+        .onAppear {
+            UITabBar.appearance().barTintColor = UIColor(Color("SideColor"))
+            UITabBar.appearance().backgroundColor = UIColor(Color("SideColor"))
+        }
         .sheet(isPresented: $isNewUser){
             OnboardingView()
                 .presentationDetents([.fraction(0.26)])
