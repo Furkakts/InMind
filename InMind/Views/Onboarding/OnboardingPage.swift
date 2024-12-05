@@ -25,13 +25,12 @@ struct OnboardingPage: View {
         .padding(.top, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("SideColor"))
-    } // End body
+    }
     
     // Button to close Onboarding View.
     var button: some View {
-        Button {
-            isNewUser.toggle()
-        }label: {
+        Button { isNewUser.toggle() }
+        label: {
             Text("FINISH")
                 .padding(.horizontal, 50)
                 .padding(.vertical, 10)

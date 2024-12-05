@@ -4,7 +4,7 @@ import SwiftUI
 struct VersionView: View {
     
     var body: some View {
-        Text("\(Bundle.main.appVersionLong).\(Bundle.main.appBuild)")
+        Text("\(Bundle.main.appVersionLong)")
             .font(.system(.callout, design: .rounded, weight: .medium))
             .foregroundStyle(Color("SideColor"))
             .kerning(1.7)
@@ -13,9 +13,6 @@ struct VersionView: View {
 
 // Gets application's version and build
 extension Bundle {
-    public var appBuild: String {
-        getInfo("CFBundleVersion")
-    }
     public var appVersionLong: String {
         getInfo("CFBundleShortVersionString")
     }

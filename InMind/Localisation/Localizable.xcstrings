@@ -4,16 +4,8 @@
     "" : {
       "shouldTranslate" : false
     },
-    "%@.%@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@.%2$@"
-          }
-        }
-      },
-      "shouldTranslate" : false
+    "%@" : {
+
     },
     "Access passwords without effort" : {
       "localizations" : {
@@ -54,6 +46,9 @@
           }
         }
       }
+    },
+    "Chnage" : {
+
     },
     "Clear" : {
       "localizations" : {

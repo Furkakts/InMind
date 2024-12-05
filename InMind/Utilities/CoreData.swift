@@ -1,7 +1,7 @@
 import Foundation
 import CoreData
 
-class CoreData:ObservableObject {
+class CoreData: ObservableObject {
     @Published private(set) var passwords:[PasswordEntity] = []
     @Published private(set) var isErrorOccurred = false
     @Published private(set) var isLoadingCompleted = false
@@ -29,20 +29,7 @@ class CoreData:ObservableObject {
             }
         }
     }
-    
-    /// Gets data and updates passwords array with it.
-    ///
-    /// If an error  comes out, it suspends application on SplashScreen.
-    func fetchPasswords(){
-        let request = NSFetchRequest<PasswordEntity>(entityName: "PasswordEntity")
-        if let fetchedPasswords = try? container.viewContext.fetch(request) {
-            passwords = fetchedPasswords
-            isLoadingCompleted = true
-        } else {
-            isErrorOccurred = true
-        }
-    }
-    
+
     func addPassword(username:String, password:String, comment:String) {
         let passwordEnt = PasswordEntity(context: container.viewContext)
             passwordEnt.name = username
@@ -57,7 +44,15 @@ class CoreData:ObservableObject {
         container.viewContext.delete(deletedPassword)
         try? container.viewContext.save()
         fetchPasswords()
-        
-       
+    }
+   
+    func fetchPasswords() {
+        let request = NSFetchRequest<PasswordEntity>(entityName: "PasswordEntity")
+        if let fetchedPasswords = try? container.viewContext.fetch(request) {
+            passwords = fetchedPasswords
+            isLoadingCompleted = true
+        } else {
+            isErrorOccurred = true
+        }
     }
 }

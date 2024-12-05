@@ -2,10 +2,10 @@
 import SwiftUI
 
 struct DataProgressView: View {
-    @State var dataModel: CoreData
+    @State var cdm: CoreData
     
     var body: some View {
-        if dataModel.isErrorOccurred {
+        if cdm.isErrorOccurred {
             errorView }
         else {
             ProgressView()
@@ -25,5 +25,5 @@ struct DataProgressView: View {
 }
 
 #Preview {
-    DataProgressView(dataModel: CoreData())
+    DataProgressView(cdm: CoreData())
 }

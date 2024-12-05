@@ -5,15 +5,13 @@ struct ContentView: View {
     
     var body: some View {
         if !coredataModel.isLoadingCompleted {
-            SplashScreen(cdModel:coredataModel) }
+            SplashScreen(cdm:coredataModel) }
         
         else {
-            MainScreen(coreDataModel: coredataModel) }
+            MainScreen(cdm: coredataModel) }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

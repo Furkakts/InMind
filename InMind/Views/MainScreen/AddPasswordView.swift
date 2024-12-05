@@ -1,16 +1,19 @@
 import SwiftUI
 
 struct AddPasswordView: View {
+   
     // MARK: Properties
-    var coreDataModel:CoreData
+    var cdm:CoreData
+    @FocusState private var isFocused: Bool
+    
     @State private var username = ""
     @State private var password = ""
     @State private var comment = ""
-    @State private var confirmationMessage: LocalizedStringKey = ""
-    @State private var isErrorOccurred = false
-    @State private var isSaved = false
-    @FocusState private var isFocused: Bool
     
+    @State private var confirmationMessage: LocalizedStringKey = ""
+    @State private var isSaved = false
+    @State private var isErrorOccurred = false
+   
     var body: some View {
         ZStack {
             Color("MainColor").ignoresSafeArea()
@@ -41,6 +44,7 @@ struct AddPasswordView: View {
             }
         }
     }
+    
     // MARK: Views
     var appName: some View {
         Text("InMind")
@@ -55,6 +59,7 @@ struct AddPasswordView: View {
                 .foregroundStyle(Color("MainColor"))
                 
             TextField("", text: fieldText, prompt: prompt(text: text))
+                .focused($isFocused)
                 .padding(.vertical, 8)
                 .foregroundStyle(Color("SideColor"))
                 .background(Color("MainColor"))
@@ -136,6 +141,7 @@ struct AddPasswordView: View {
             .foregroundStyle(Color("SideColor"))
             .background(Color("MainColor"), in: Capsule())
     }
+    
     // MARK: Functions
     var saveButton: some View {
         Button {
@@ -155,7 +161,7 @@ struct AddPasswordView: View {
     }
     
     func isAvailable() -> Bool{
-        let result = coreDataModel.passwords.map { password in password.name }.contains(username)
+        let result = cdm.passwords.map { password in password.name }.contains(username)
         if result {
             confirmationMessage = "Username/E-mail is already in your list."
             return true
@@ -178,7 +184,7 @@ struct AddPasswordView: View {
         if comment.isEmpty { defaultComment = "-" }
         else { defaultComment = comment.trimmingCharacters(in: .whitespacesAndNewlines) }
         
-        coreDataModel.addPassword(username:username, password:password, comment: defaultComment)
+        cdm.addPassword(username:username, password:password, comment: defaultComment)
         
         confirmationMessage = "Saved Successfully."
         isSaved = true
@@ -191,8 +197,7 @@ struct AddPasswordView: View {
     }
 }
 
-struct AddPasswordView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddPasswordView(coreDataModel: CoreData())
-    }
+#Preview {
+    AddPasswordView(cdm: CoreData())
 }
+

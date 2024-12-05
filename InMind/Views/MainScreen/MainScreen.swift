@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MainScreen: View {
-    @StateObject var coreDataModel: CoreData
+    @State var cdm: CoreData
     @AppStorage("isNewUser") private var isNewUser = true
     
     var body: some View {
@@ -11,7 +11,7 @@ struct MainScreen: View {
                     Label("Password List", systemImage: "list.bullet.rectangle.portrait.fill")
                 }
 
-            AddPasswordView(coreDataModel: coreDataModel)
+            AddPasswordView(cdm: cdm)
                 .tabItem {
                     Label("Add", systemImage: "plus.app.fill")
                 }
@@ -31,16 +31,15 @@ struct MainScreen: View {
 
     func setTabView() -> some View {
         Group {
-            if coreDataModel.passwords.isEmpty { ContentUnavailableView() }
-            else { PasswordList(coreDataModel: coreDataModel) }
+            if cdm.passwords.isEmpty { ContentUnavailableView() }
+            else { PasswordList(cdm: cdm) }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("MainColor"))
     }
 }
 
-struct MainScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        MainScreen(coreDataModel: CoreData())
-    }
+#Preview {
+    MainScreen(cdm: CoreData())
 }
+

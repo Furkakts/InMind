@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct PasswordCellButtonsView: View {
-    @State var coreData:CoreData
+    @State var cdm:CoreData
     var password: PasswordEntity
     
     var body: some View {
@@ -12,7 +12,7 @@ struct PasswordCellButtonsView: View {
             
             Spacer()
             
-            Button { coreData.deletePassword(deletedPassword: password) }
+            Button { cdm.deletePassword(deletedPassword: password) }
             label: { setLabelImage(labelName: "Delete", imageName: "trash.fill") }
         }
     }
@@ -28,5 +28,5 @@ struct PasswordCellButtonsView: View {
 }
 
 #Preview {
-    PasswordCellButtonsView(coreData: CoreData(), password: PasswordEntity())
+    PasswordCellButtonsView(cdm: CoreData(), password: PasswordEntity())
 }

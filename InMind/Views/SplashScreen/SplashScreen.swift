@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SplashScreen: View {
-    @State var cdModel: CoreData
+    @State var cdm: CoreData
     
     var body: some View {
         VStack{
@@ -11,16 +11,16 @@ struct SplashScreen: View {
                 .foregroundStyle(Color("SideColor"))
             Spacer()
             VStack(spacing: 50) {
-                DataProgressView(dataModel: cdModel)
+                DataProgressView(cdm: cdm)
                 VersionView()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("MainColor"))
-        .onAppear { cdModel.setContainer() }
+        .onAppear { cdm.setContainer() }
     }
 }
  
 #Preview {
-    SplashScreen(cdModel: CoreData())
+    SplashScreen(cdm: CoreData())
 }

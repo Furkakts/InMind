@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct PasswordCellView: View {
-    var password: PasswordEntity
+    let password: PasswordEntity
     
     var body: some View {
         NecessaryFieldsView(fieldName: "Account Name:", fieldData: password.name ?? "")
@@ -51,8 +51,6 @@ struct NoteView: View {
         }
     }
 }
-
-
 
 #Preview {
     PasswordCellView(password: PasswordEntity())

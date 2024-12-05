@@ -1,16 +1,15 @@
 import SwiftUI
 
 struct PasswordList: View {
-    @StateObject var coreDataModel:CoreData
-    
+    @StateObject var cdm:CoreData
     var body: some View {
         VStack(spacing: 0){
             title
             ScrollView(.vertical, showsIndicators: false) {
-                ForEach(coreDataModel.passwords) { password in
+                ForEach(cdm.passwords) { password in
                     VStack(alignment: .leading, spacing: 10) {
                         PasswordCellView(password: password)
-                        PasswordCellButtonsView(coreData: coreDataModel, password: password)
+                        PasswordCellButtonsView(cdm: cdm, password: password)
                             .padding(.horizontal, 10)
                     }
                     .padding()
@@ -31,8 +30,7 @@ struct PasswordList: View {
     }
 }
 
-struct PasswordList_Previews: PreviewProvider {
-    static var previews: some View {
-        PasswordList(coreDataModel: CoreData())
-    }
+#Preview {
+    PasswordList(cdm: CoreData())
 }
+
