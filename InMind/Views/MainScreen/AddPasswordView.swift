@@ -89,6 +89,7 @@ struct AddPasswordView: View {
             .padding(.leading, 20)
             
             TextEditor(text: editorText)
+                .focused($isFocused)
                 .frame(height: 65)
                 .scrollContentBackground(.hidden)
                 .foregroundStyle(Color("SideColor"))
@@ -103,7 +104,6 @@ struct AddPasswordView: View {
     
     var clearButton: some View {
         Label("Clear", systemImage: "arrowshape.down.fill")
-            .focused($isFocused)
             .padding(.horizontal, 10)
             .padding(.vertical, 10)
             .font(.system(.caption, design: .rounded, weight: .medium))
@@ -175,7 +175,7 @@ struct AddPasswordView: View {
     func save() {
         var defaultComment = ""
         
-        if comment.isEmpty { defaultComment = "There is no note." }
+        if comment.isEmpty { defaultComment = "-" }
         else { defaultComment = comment.trimmingCharacters(in: .whitespacesAndNewlines) }
         
         coreDataModel.addPassword(username:username, password:password, comment: defaultComment)
