@@ -25,12 +25,42 @@
         }
       }
     },
+    "Account Name" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hesap İsmi"
+          }
+        }
+      }
+    },
+    "Account Name:" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hesap İsmi:"
+          }
+        }
+      }
+    },
     "Add" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ekle"
+          }
+        }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temizle"
           }
         }
       }
@@ -51,16 +81,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sil"
-          }
-        }
-      }
-    },
-    "E-mail / Username" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mail / Kullanıcı Adı"
           }
         }
       }
@@ -216,16 +236,6 @@
         }
       }
     },
-    "Username:" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kullanıcı Adı:"
-          }
-        }
-      }
-    },
     "Username/E-mail is already in your list." : {
       "localizations" : {
         "tr" : {
@@ -242,17 +252,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "InMind’a Hoşgeldin!"
-          }
-        }
-      }
-    },
-    "Write note here!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not Ekle."
           }
         }
       }

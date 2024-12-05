@@ -5,7 +5,7 @@ struct PasswordCellView: View {
     var password: PasswordEntity
     
     var body: some View {
-        NecessaryFieldsView(fieldName: "Username:", fieldData: password.name ?? "")
+        NecessaryFieldsView(fieldName: "Account Name:", fieldData: password.name ?? "")
         NecessaryFieldsView(fieldName: "Password:", fieldData: password.password ?? "")
         NoteView(fieldName: "Note", fieldData: password.comment ?? "")
             .padding(.horizontal, 20)

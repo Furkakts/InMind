@@ -9,6 +9,7 @@ struct AddPasswordView: View {
     @State private var confirmationMessage: LocalizedStringKey = ""
     @State private var isErrorOccurred = false
     @State private var isSaved = false
+    @FocusState private var isFocused: Bool
     
     var body: some View {
         ZStack {
@@ -22,7 +23,7 @@ struct AddPasswordView: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 20)
                 
-                textField(fieldText: $username, text:"E-mail / Username")
+                textField(fieldText: $username, text:"Account Name")
                 textField(fieldText: $password, text: LocalizedStringResource("Password", table: "Extra"))
                 textEditor(editorText: $comment, text: "Note")
                 
@@ -77,10 +78,15 @@ struct AddPasswordView: View {
     }
     
     func textEditor(editorText:Binding<String>, text:LocalizedStringResource) -> some View {
-        VStack(alignment:.center){
-            Text(text)
-                .font(.system(.subheadline, design: .rounded, weight: .medium))
-                .foregroundStyle(Color("MainColor"))
+        VStack(alignment:.center, spacing: 5){
+            HStack {
+                Text(text)
+                    .font(.system(.subheadline, design: .rounded, weight: .medium))
+                    .foregroundStyle(Color("MainColor"))
+                Spacer()
+                clearButton
+            }
+            .padding(.leading, 20)
             
             TextEditor(text: editorText)
                 .frame(height: 65)
@@ -93,6 +99,20 @@ struct AddPasswordView: View {
                 .disableAutocorrection(true)
                 .tint(Color("SideColor"))
         }
+    }
+    
+    var clearButton: some View {
+        Label("Clear", systemImage: "arrowshape.down.fill")
+            .focused($isFocused)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 10)
+            .font(.system(.caption, design: .rounded, weight: .medium))
+            .foregroundStyle(Color("SideColor"))
+            .background(Color("MainColor"), in: Capsule())
+            .onTapGesture {
+                comment = ""
+                isFocused = false
+            }
     }
     
     var resetButton: some View {
@@ -165,7 +185,7 @@ struct AddPasswordView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             isSaved = false
             confirmationMessage = ""
-           // isFocused = false
+            isFocused = false
             reset()
         }
     }
