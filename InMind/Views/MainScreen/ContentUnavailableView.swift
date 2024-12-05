@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct ContentUnavailableView: View {
-    private let message = "There is nothing to show now. You can see your passwords and related information here if you add password."
+    private let message: LocalizedStringKey = "There is nothing to show now. You can see your passwords and related information here if you add password."
     
     var body: some View {
         VStack(spacing: 30) {
@@ -18,7 +18,7 @@ struct ContentUnavailableView: View {
                 .kerning(1.0)
                 .multilineTextAlignment(.center)
         }
-        .padding(.horizontal, 30)
+        .padding(.horizontal, 50)
     }
 }
 

@@ -223,7 +223,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gösterilecek bir şey bulunamadı. Yeni bir şifre eklediğinde onu buradan görebilirsiniz."
+            "value" : "Gösterilecek bir şey bulunamadı. Yeni bir şifre eklediğinde onu buradan görebilirsin."
           }
         }
       }
