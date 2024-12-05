@@ -8,7 +8,7 @@ struct OnboardingContent {
          "Access passwords without effort", "Feedbacks are as vital as passwords."]
     
     static let descriptions: [LocalizedStringKey] =
-        ["Passwords are used everyday and everywhere. Someone memorizes these passwords, others take note of these passwords not to forget. In order to save you from this, I offer you a remedy, InMind.",
+        ["Passwords are used everyday and everywhere. Someone memorizes these passwords, others take note of them not to forget. In order to save you from this, I offer you a remedy, InMind.",
      
          "You can store passwords of social media accounts, credit cards or other accounts in this app. Then you get them whenever you need without memorizing.",
      
