@@ -27,6 +27,16 @@
         }
       }
     },
+    "Account Name is already in your list." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu hesap ismi listende var."
+          }
+        }
+      }
+    },
     "Account Name:" : {
       "localizations" : {
         "tr" : {
@@ -167,7 +177,7 @@
         }
       }
     },
-    "Passwords are used everyday and everywhere. Someone memorizes these passwords, others take note of these passwords not to forget. In order to save you from this, I offer you a remedy, InMind." : {
+    "Passwords are used everyday and everywhere. Someone memorizes these passwords, others take note of them not to forget. In order to save you from this, I offer you a remedy, InMind." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -226,14 +236,15 @@
             "value" : "Gösterilecek bir şey bulunamadı. Yeni bir şifre eklediğinde onu buradan görebilirsin."
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
-    "Username/E-mail is already in your list." : {
+    "There is nothing to show now. You can view your passwords here when you add a new password." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Girdiğin Kullanıcı Adı/Email daha önce eklendi."
+            "value" : "Gösterilecek bir şey bulunamadı. Yeni bir şifre eklediğinde onu buradan görebilirsin."
           }
         }
       }

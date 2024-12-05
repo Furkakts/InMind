@@ -163,7 +163,7 @@ struct AddPasswordView: View {
     func isAvailable() -> Bool{
         let result = cdm.passwords.map { password in password.name }.contains(username)
         if result {
-            confirmationMessage = "Username/E-mail is already in your list."
+            confirmationMessage = "Account Name is already in your list."
             return true
        }
         return false

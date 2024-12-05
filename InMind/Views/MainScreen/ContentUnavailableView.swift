@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct ContentUnavailableView: View {
-    private let message: LocalizedStringKey = "There is nothing to show now. You can see your passwords and related information here if you add password."
+    private let message: LocalizedStringKey = "There is nothing to show now. You can view your passwords here when you add a new password."
     
     var body: some View {
         VStack(spacing: 30) {
